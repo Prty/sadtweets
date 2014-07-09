@@ -1,0 +1,66 @@
+<!DOCTYPE/>
+<html>
+<head>
+	<title>Sad Tweets</title>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+	<article>
+		<h1>Sad Tweets</h1>
+	</article>
+
+	<form>
+		<input type="text" class="twitter-form-input"/>
+		<input type="submit" class="get-sadtweets-button" value="Get Sad Tweets"/>
+	</form>
+
+	<h2>
+		Sad Tweets for
+		<p><%= username %></p>
+	</h2>
+
+	<!--		   -->
+	<!-- TEMPLATES -->
+	<!--		   -->
+
+	<!-- Record detail template. -->
+	<script id="tweets-template" type="text/x-handlebars-template">
+		<div class="tweets-wrapper">
+			<div class="profile-wrapper">
+				<div class="image-wrapper">
+					<img src="{{profile_image}}"/>
+				</div>
+				<span>{{screenname}}</span>
+			</div>
+
+			<div class="tweet-text">
+				{{text}}
+			</div>
+
+			<div class="tweet-stats">
+				<div class="stat-section stat-1">
+					<p>Favorite</p>
+					<span>{{favorite_count}}</span>
+				</div>
+
+				<div class="stat-section stat-2">
+					<p>Retweet</p>
+					<span>{{retweet_count}}</span>
+				</div>
+			</div> 
+		</div>
+	</script>
+
+	<div class="tweets-container">
+	</div>
+
+	<!-- JAVASCRIPT -->
+	<script type="text/javascript" src="js/libs/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="js/libs/handlebars.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+
+	<script type="text/javascript">
+		window.SadTweets.init();
+	</script>
+</body>
+</html>

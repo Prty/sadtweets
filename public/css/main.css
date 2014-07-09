@@ -1,0 +1,47 @@
+body {
+	background: white;
+}
+
+h1 {
+	font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+.tweets-wrapper {
+	max-width: 300px;
+	width: 100%;
+	height: 200px;
+	border: 1px solid black;
+	/*background: red;*/
+	border-radius: 4px;
+	margin: 15px;
+}
+.profile-wrapper {
+	/*background: yellow;*/
+	display: inline-block;
+	float: left;
+}
+.tweet-text {
+	/*background: lime;*/
+	display: inline-block;
+	float: left;
+	width: 80%;
+}
+.tweet-stats {
+	width: 100%;
+	/*background: cyan;*/
+	float: left;
+}
+	.tweet-stats span {
+		font-size: 3em;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+	}
+
+	.stat-section {
+		/*background: magenta;*/
+		width: auto;
+		display: inline-block;
+		float: right;
+		margin: 0 5px;
+	}
