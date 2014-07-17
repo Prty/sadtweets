@@ -3,8 +3,12 @@
 
 	<head>
 		<title>Sad Tweets</title>
-		 <link rel="stylesheet" type="text/css" href="css/normalize.css"> 
+
+		<!-- STYLING -->
+		<link rel="stylesheet" type="text/css" href="css/normalize.css"> 
 		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<!-- <link rel="stylesheet" type="text/css" href="css/tweets.css"> -->
+
 	</head>
 
 
@@ -12,25 +16,29 @@
 
 	    <div class="wrapper">
 
-			<div class="logo">
-				<img src="img/sadtweetslogo.png" width="650" height="110"></img>
-			</div>
+	    	<div class="intro-wrapper">
+				<div class="logo">
+					<img src="img/sadtweetslogo.png" width="650" height="110"></img>
+				</div>
+				
+				<div class="middle">
+					<div class="description">Discover the saddest, most lonely tweets you ever tweeted.</div>
+				</div>
 
-			<div class="middle">
-				<div class="description">Discover the saddest, most lonely tweets you ever tweeted.</div>
-			</div>
+				<div class="forms">
+					<form>
+						<input type="text" class="twitter-form-input field" placeholder="Your Twitter Handle" /></input>
+						<input type="submit" class="get-sadtweets-button button" value="Discover Now"></input>
+					</form>
+				</div>
 
-			<div class="forms">
-				<form>
-					<input type="text" class="twitter-form-input field" placeholder="Your Twitter Handle" /></input>
-					<input type="submit" class="get-sadtweets-button button" value="Discover Now"></input>
-				</form>
-			</div>
+				<div class="credits">
+		            Made at <a href="http://twitter.com/prty_ny" target="_blank">Party NY</a>, 
+		            by <a href="http://twitter.com/tweetsnotfound" target="_blank"> ART404</a> and <a href="http://twitter.com/tomgalle/" target="_blank">Tom</a>
+	        	</div>
+	        </div>
 
-			<div class="credits">
-	            Made at <a href="http://twitter.com/prty_ny" target="_blank">Party NY</a>, 
-	            by <a href="https://twitter.com/tweetsnotfound" target="_blank"> Art404</a> and <a href="http://twitter.com/tomgalle/" target="_blank">Tom</a>
-        	</div>
+	        <div class="tweets-container"></div>
 
 	    </div>
         
@@ -40,34 +48,35 @@
 
 		<!-- Record detail template. -->
 		<script id="tweets-template" type="text/x-handlebars-template">
-			<div class="tweets-wrapper">
-				<div class="profile-wrapper">
-					<div class="image-wrapper">
-						<img src="{{profile_image}}"/>
-					</div>
-					<span>{{screenname}}</span>
-				</div>
+			<div class="tweet">    
+				<div class="title">1 year and 33 days without RT or Favorite... </div>    
+				<div class="frame">
+					<div class="profile"> 
+						<div class="profilepic">
+							<img src="{{profile_image}}"/>
+						</div>
+						<div class="name">{{screenname}}</div>
+						<div class="handle">@tomgalle</div>
+					</div> <!-- profile -->
 
-				<div class="tweet-text">
-					{{text}}
-				</div>
+					<div class="tweettext">{{text}}</div>
+					<div class="line"></div>
 
-				<div class="tweet-stats">
-					<div class="stat-section stat-1">
-						<p>Favorite</p>
-						<span>{{favorite_count}}</span>
-					</div>
+					<div class="tweetbottom">
+						<div class="fav sub">{{favorite_count}}</div>
+						<div class="rt sub">{{retweet_count}}</div>
+					</div> <!-- tweetbottom -->
 
-					<div class="stat-section stat-2">
-						<p>Retweet</p>
-						<span>{{retweet_count}}</span>
-					</div>
-				</div> 
+					<div class="line2"></div>
+					<div class="date">11:38 PM - 13 Jul 2014</div>
+				</div>  <!-- frame -->
 			</div>
 		</script>
 
-		<div class="tweets-container">
-		</div>
+
+
+
+
 
 		<!-- JAVASCRIPT -->
 		<script type="text/javascript" src="js/libs/jquery-2.1.1.min.js"></script>

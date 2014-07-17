@@ -78,7 +78,8 @@
 			} else if (context === 'input') {
 	
 				// fetch data from input form
-				var twitterhandle = $('.twitter-form-input').val();
+				var raw_twitterhandle = $('.twitter-form-input').val();
+				var twitterhandle = raw_twitterhandle.substr(1);
 				console.log(twitterhandle);
 				params.url = 'http://localhost:3000/tweets/' + twitterhandle
 				
