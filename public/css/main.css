@@ -42,16 +42,17 @@ img {
 }
 
 .stat-section {
-		width: auto;
-		display: inline-block;
-		float: right;
-		margin: 0 5px;
+	width: auto;
+	display: inline-block;
+	float: right;
+	margin: 0 5px;
 }
 
 .wrapper {
 	width: 750px;
 	margin: 0 auto;
 	display: none;
+	height: 100%;
 }
 
 .logo {
@@ -135,20 +136,22 @@ input:focus, textarea:focus {
 
 .credits {
 	font-size: 12px;
-	color: #464646;
 	position: absolute;
-	bottom: 5px;
-	margin: 0 auto;
+	bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
 	text-align: center;
 	font-style: italic;
-	color: #D3D3D3;
+	color: #BDBDBD;
+
 }
 
 .credits a {
-	color: #D3D3D3;
+	color: #BDBDBD;
 	text-decoration: none;
 }
-
 
 
 
