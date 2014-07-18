@@ -1,14 +1,19 @@
       
       $( document ).ready(function() {
 			var tweets 		= $('.tweet'),
-				firstTweet 	= tweets.first();        	
+				firstTweet 	= tweets.first(),
+				tweetsShown = [];
 
 			fadeFunction(firstTweet);
+			function getRandTweet () {
+				console.log('tweets length: ' + tweets.length);
+			}
 
 			function fadeFunction(tweetElement) {
 				tweetElement.fadeIn( 1000, function() {
 					$(this).transition({scale: 1.06}, 5000);
 					$(this).fadeOut( 1000, function () {
+						getRandTweet();
 						if (tweetElement.next().length) {
 								fadeFunction(tweetElement.next());
 						} else {

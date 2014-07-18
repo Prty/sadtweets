@@ -18,6 +18,10 @@ body {
 	display: none;
 }
 
+.tweet-id {
+	display: none;
+}
+
 .frame {
 	width: 650px;
 	height: 300px;
