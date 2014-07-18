@@ -28,11 +28,11 @@
 
 	<body>
 		
-		<audio>
+<!-- 		<audio>
 			  <source src="assets/sadmusic.ogg" type="audio/ogg">
 			  <source src="assets/sadmusic.mp3" type="audio/mpeg">
 			  Your browser does not support audio.
-		</audio>
+		</audio> -->
 
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
@@ -44,10 +44,6 @@
 		}(document, 'script', 'facebook-jssdk'));</script>
 
 	    <div class="wrapper">
-
-	    	<div class="play">
-	    		play
-	    	</div>
 
 	    	<div class="intro-wrapper">
 				<div class="logo">
@@ -61,10 +57,10 @@
 				<div class="forms">
 					<form>
 						<input type="text" class="twitter-form-input field" placeholder="Your Twitter Handle" /></input>
-						<input type="submit" class="get-sadtweets-button button" value="Discover Now"></input>
+						<input type="submit" class="get-sadtweets-button button startmusic" value="Discover Now"></input>
 					</form>
 				</div>
-
+				
 				<div class="footer">
 					<div class="sharebuttons">
 						<div class="likeshare">
@@ -139,27 +135,20 @@
 		<script type="text/javascript">
 			window.SadTweets.init();
 
+	      	
+		        audioElement = document.createElement('audio');
+		        audioElement.setAttribute('src', 'http://tomgalle.com/assets/sadmusic2.mp3');
+		        audioElement.setAttribute('loop', 'loop');
 
-			var audioElement = document.createElement('audio');
-	        audioElement.setAttribute('src', 'audio.mp3');
-	        audioElement.setAttribute('autoplay', 'autoplay');
-	        //audioElement.load()
+		        $.get();
+		        audioElement.addEventListener("load", function() {
+		        });
 
-	        $.get();
+		        $('.pause').click(function() {
+		        audioElement.pause();
+		        });
 
-	        audioElement.addEventListener("load", function() {
-	            audioElement.play();
-	        }, true);
-
-	        $('.play').click(function() {
-	        	console.log('playing!')
-	            audioElement.play();
-	        });
-
-	        $('.pause').click(function() {
-	            audioElement.pause();
-	        });
-    
+   
 
     	</script>
 

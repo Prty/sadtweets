@@ -37,16 +37,22 @@
 				methods.getSadTweets('input');
 			});
 		},
+
 		showIntroSadTweets: function(){
 			$( '.wrapper' ).fadeIn(2000);
 
 			$( '.field' ).on( 'click', function() {
 				$('.field').val('@');
 			});
-
 		},
+
 		showSadTweets: function () {
-			// retrieve tweets from template in the DOM
+
+			
+
+			audioElement.play();	//call audio
+
+			// retrieve tweets from template in the DOM								
 			var tweets 		= $('.tweet'),
 				firstTweet 	= tweets.first(); 
 
