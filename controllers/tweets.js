@@ -56,7 +56,8 @@ exports.show = function(req, res) {
 				profile_background: returnedData[i].user.profile_background_image_url,
 				profile_image: returnedData[i].user.profile_image_url,
 				created_at: returnedData[i].user.created_at,
-				relative_created_at: moment(returnedData[i].created_at).fromNow(true)
+				relative_created_at: moment(returnedData[i].created_at).fromNow(true),
+				format_created_at: moment().format(returnedData[i].created_at)
 			};
 			returnedDataObject[tweet.id] = tweet;
 			var currentLastTweetID = tweet.id;

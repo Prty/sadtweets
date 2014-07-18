@@ -45,7 +45,7 @@
 					$(this).transition({scale: 1.06}, 5000);
 					$(this).fadeOut( 1000, function () {
 						if (tweetElement.next().length) {
-								fadeFunction(tweetElement.next());
+							fadeFunction(tweetElement.next());
 						} else {
 							console.log('no more sad tweets!');
 							$('.fin').fadeIn(1000, function(){
@@ -86,7 +86,8 @@
 							profile_image: obj.profile_image,
 							profile_background: obj.profile_background,
 							created_at: obj.created_at,
-							relative_created_at: obj.relative_created_at
+							relative_created_at: obj.relative_created_at,
+							format_created_at: obj.format_created_at
 						}
 						console.log(obj.text);
 						var html = tweetsTemplate(tweet);

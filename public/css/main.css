@@ -2,21 +2,18 @@ body {
 	background: white;
 	font-family: "Times New Roman",Georgia,Serif;
 }
-
 .wrapper {
 	width: 800px;
 	margin: 0 auto;
 	display: none;
 	height: 100%;
 }
-
 .logo {
 	width: 650px;
 	height: 110px;
 	margin: 0 auto;
 	padding-top: 80px;
 }
-
 .middle {
 	text-align: center;
 	padding-top: 45px;
@@ -24,14 +21,10 @@ body {
 	font-size: 48px;
 	color: #464646;
 }
-
-
 .forms {
 	margin: 0 auto;
 	width: 556px;
 }
-
-
 .field {
 	font-family: "Times New Roman",Georgia,Serif;
 	font-style: italic;
@@ -45,7 +38,6 @@ body {
 	border: 3px solid #00aeef;
 	padding-left: 10px;
 }
-
 .button {
 	width: 225px;
 	height: 58px;
@@ -63,30 +55,21 @@ body {
 	cursor: pointer;
 	margin-left: 6px;
 }
-
-
 input:focus, textarea:focus {
     outline: none;
 }
-
-
 ::-webkit-input-placeholder {
    color: #464646;
 }
-
 :-moz-placeholder { /* Firefox 18- */
    color: #464646;  
 }
-
 ::-moz-placeholder {  /* Firefox 19+ */
    color: #464646;  
 }
-
 :-ms-input-placeholder {  
    color: #464646;  
 }
-
-
 .credits {
 	font-size: 12px;
 	position: absolute;
@@ -100,26 +83,20 @@ input:focus, textarea:focus {
 	color: #BDBDBD;
 
 }
-
 .credits a {
 	color: #BDBDBD;
 	text-decoration: none;
 }
 
 
-
-
 /* 			*/
 /*  TWEETS 	*/
 /*			*/
-
-
 
 .tweet {
 	height: 500px;
 	display: none;
 }
-
 .frame {
 	width: 650px;
 	height: 300px;
@@ -134,7 +111,6 @@ input:focus, textarea:focus {
 	-khtml-border-radius: 6px; /* for old Konqueror browsers */
 /*	display: none;*/
 }
-
 .title {
 	text-align: center;
 	font-size: 30px;
@@ -144,15 +120,11 @@ input:focus, textarea:focus {
 	margin-top: 120px;
 
 }
-
-
 .profile {
 	margin: 40 40 22 40; /* boven rechts onder links */
 	height: 52px;
 	width: 200px;
 }
-
-
 .profilepic {
 	width: 52px;
 	height: 42px;
@@ -165,7 +137,6 @@ input:focus, textarea:focus {
 	-khtml-border-radius: 7px; /* for old Konqueror browsers */
 	
 }
-
 .circle {
 	width: 18px;
 	height: 30px;
@@ -176,7 +147,6 @@ input:focus, textarea:focus {
 	border-radius: 50%; /* future proofing */
 	-khtml-border-radius: 50%; /* for old Konqueror browsers */
 }
-
 .name {
 	font-size: 17px;
 	letter-spacing: 1px;
@@ -189,7 +159,6 @@ input:focus, textarea:focus {
 	margin-top: 4px;
 	color: #353535;
 }
-
 .handle {
 	float: left;
 	text-align: left;
@@ -198,7 +167,6 @@ input:focus, textarea:focus {
 	margin-left: 12px;
 	color: #9d9d9d;
 }
-
 .tweettext {
 	font-size: 32px;
 	margin-left: 40px;
@@ -206,35 +174,28 @@ input:focus, textarea:focus {
 	font-weight: 300;
 	color: #353535;
 }
-
-
 .line {
 	width: 570px;
 	margin: 0 auto;
 	height: 20px;
 	border-bottom: 1px solid #dbdbdb;
 }
-
 .tweetbottom {
 	width: 570px;
 	height: 50px;
 	text-align: left;
 	margin: 0 auto;
 }
-
-
 .sub {
 	text-transform: uppercase;
 	font-size: 20px;
 	color: #9d9d9d;
 }
-
 .rt {
 	padding-top: 14px;
 	padding-left: 15px;
 	float: left;
 }
-
 .fav {
 	height: 36px;
 	width: 130px;
@@ -243,26 +204,21 @@ input:focus, textarea:focus {
 	float: left;
 	border-right: 1px solid #dbdbdb;
 }
-
-
 .line2 {
 	width: 570px;
 	margin: 0 auto;
 	height: 20px;
 	border-top: 1px solid #dbdbdb;
 }
-
 .date {
 	text-transform: uppercase;
 	font-size: 12px;
 	color: #9d9d9d;
 	margin-left: 40px;
 }
-
 .tweet2 {
 	display: none;
 }
-
 .fin {
 	text-align: center;
 	font-size: 65px;
@@ -278,7 +234,6 @@ input:focus, textarea:focus {
 	margin: 0 auto;
 	margin-bottom: 40px;
 }
-
 .end {
 	font-size: 26px;
 	margin: 0 4 0 4;
@@ -287,7 +242,6 @@ input:focus, textarea:focus {
 	border-bottom: 1px solid #9d9d9d;
 	padding-bottom: 1px;
 }
-
 .endwrap {
 	width: 510px;
 	height: 100px;	
@@ -295,12 +249,10 @@ input:focus, textarea:focus {
 	position: relative;
 	left: -5;
 }
-
 .end a {
 	color: #9d9d9d;
 
 }
-
 .video {
 	display: none;
 }
