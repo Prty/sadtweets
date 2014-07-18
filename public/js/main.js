@@ -34,6 +34,7 @@
 			});
 		},
 		showSadTweets: function () {
+			// retrieve tweets from template in the DOM
       		var tweets 		= $('.tweet'),
 				firstTweet 	= tweets.first();        	
 
@@ -83,7 +84,9 @@
 							screenname: obj.screenname,
 							link: obj.twitter_source_link,
 							profile_image: obj.profile_image,
-							profile_background: obj.profile_background
+							profile_background: obj.profile_background,
+							created_at: obj.created_at,
+							relative_created_at: obj.relative_created_at
 						}
 						console.log(obj.text);
 						var html = tweetsTemplate(tweet);
@@ -91,6 +94,7 @@
 					});
 
 					history.pushState(null, null, twitterhandle);
+					methods.showSadTweets();
 					// 	console.log(html);
 						
 					// } // end of for loop

@@ -6,7 +6,8 @@ var express = require('express'),
 	router  = express.Router(),
 	util    = require('util'),
 	Twit    = require('twit'),
-	TwitterStrategy = require('passport-twitter').Strategy;
+	TwitterStrategy = require('passport-twitter').Strategy,
+	moment = require('moment');
 
 var TWITTER_CONSUMER_KEY    = 'PKhzF4Ww6DqbqribSUxQGn5VG';
 var TWITTER_CONSUMER_SECRET = 'aQuQHE827XmXmw4gz3NjXTB44LJ4o60gFhkBiB9S9eny2TJH4A';
@@ -25,8 +26,9 @@ var T = new Twit({
 
 exports.show = function(req, res) {
 	console.log(req.params.username);
-	var returnedData;
-	var returnedDataObject = {};
+	var returnedData,
+		returnedDataObject = {},
+		currentLastTweetID;
 
 	T.get('statuses/user_timeline', { screen_name: req.params.username, count: 200 },  function (err, data, response) {
 		returnedData = data;
@@ -52,14 +54,17 @@ exports.show = function(req, res) {
 				username: returnedData[i].user.name,
 				screenname: returnedData[i].user.screen_name,
 				profile_background: returnedData[i].user.profile_background_image_url,
-				profile_image: returnedData[i].user.profile_image_url
+				profile_image: returnedData[i].user.profile_image_url,
+				created_at: returnedData[i].user.created_at,
+				relative_created_at: moment(returnedData[i].created_at).fromNow(true)
 			};
 			returnedDataObject[tweet.id] = tweet;
+			var currentLastTweetID = tweet.id;
 		}	
 	}
-
+		console.log('currentLastTweetID: ' + currentLastTweetID);
 		res.json(returnedDataObject);
-		// user.res.json(data);
+		// res.json(data);
 		// res.redirect('index.html');
 	});
 

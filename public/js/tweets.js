@@ -1,6 +1,6 @@
       
       $( document ).ready(function() {
-      		var tweets 		= $('.tweet'),
+			var tweets 		= $('.tweet'),
 				firstTweet 	= tweets.first();        	
 
 			fadeFunction(firstTweet);

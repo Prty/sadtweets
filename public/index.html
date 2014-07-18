@@ -64,7 +64,7 @@
 		<!-- Record detail template. -->
 		<script id="tweets-template" type="text/x-handlebars-template">
 			<div class="tweet">    
-				<div class="title">1 year and 33 days without RT or Favorite... </div>    
+				<div class="title">{{relative_created_at}} without RT or Favorite... </div>    
 				<div class="frame">
 					<div class="profile"> 
 						<div class="profilepic">
@@ -78,8 +78,8 @@
 					<div class="line"></div>
 
 					<div class="tweetbottom">
-						<div class="fav sub">{{favorite_count}}</div>
-						<div class="rt sub">{{retweet_count}}</div>
+						<div class="fav sub">Favorites {{favorite_count}}</div>
+						<div class="rt sub">Retweets {{retweet_count}}</div>
 					</div> <!-- tweetbottom -->
 
 					<div class="line2"></div>
@@ -91,6 +91,7 @@
 		<!-- JAVASCRIPT -->
 		<script type="text/javascript" src="js/libs/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="js/libs/handlebars.js"></script>
+		<script type="text/javascript" src="js/libs/jquery.transit.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 
 		<script type="text/javascript">
