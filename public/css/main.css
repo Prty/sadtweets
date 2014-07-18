@@ -68,17 +68,41 @@ input:focus, textarea:focus {
    color: #464646;  
 }
 :-ms-input-placeholder {  
-   color: #464646;  
+   color: #464646;     
 }
-.credits {
-	font-size: 12px;
+
+
+/*  		*/
+/*  Footer 	*/
+/*			*/
+
+
+.Footer {
+	width: 290px;
+	height: 40px;
+	background-color: red;
 	position: absolute;
 	bottom: 10px;
 	margin-left: auto;
 	margin-right: auto;
-	left: 0;
-	right: 0;
-	text-align: center;
+}
+
+.sharebuttons {
+	width: 170px;
+	background-color: lime;
+}
+
+.tweet {
+	float: left;
+}
+
+.like {
+	float: right;
+}
+
+.credits {
+	font-size: 12px;
+	float: right;
 	font-style: italic;
 	color: #BDBDBD;
 
@@ -87,6 +111,9 @@ input:focus, textarea:focus {
 	color: #BDBDBD;
 	text-decoration: none;
 }
+
+
+
 
 
 /* 			*/
@@ -220,9 +247,14 @@ input:focus, textarea:focus {
 	color: #9d9d9d;
 	margin-left: 40px;
 }
-.tweet2 {
-	display: none;
-}
+
+
+
+/*  					*/
+/* No More Tweets Frame */
+/*						*/
+
+
 .fin {
 	text-align: center;
 	font-size: 65px;
@@ -257,6 +289,4 @@ input:focus, textarea:focus {
 	color: #9d9d9d;
 
 }
-.video {
-	display: none;
-}
+

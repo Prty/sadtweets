@@ -29,6 +29,15 @@
 
 	<body>
 
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=329962340406576&version=v2.0";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+
 	    <div class="wrapper">
 
 	    	<div class="intro-wrapper">
@@ -47,10 +56,22 @@
 					</form>
 				</div>
 
-				<div class="credits">
-		            Made at <a href="http://twitter.com/prty_ny" target="_blank">Party NY</a>, 
-		            by <a href="http://twitter.com/tweetsnotfound" target="_blank"> ART404</a> and <a href="http://twitter.com/tomgalle/" target="_blank">Tom</a>
-	        	</div>
+				<div class="footer">
+					<div class="sharebuttons">
+						<div class="like">
+							<div class="fb-like" data-href="http://sadtweets.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+						</div>
+						<div class="tweet">
+							<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://sadtweets.com" data-via="prty_ny" data-hashtags="sadtweets">Tweet</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						</div>
+					</div>					
+					<div class="credits">
+			            Made at <a href="http://twitter.com/prty_ny" target="_blank">Party NY</a>, 
+			            by <a href="http://twitter.com/tweetsnotfound" target="_blank"> ART404</a> and <a href="http://twitter.com/tomgalle/" target="_blank">Tom</a>
+	        		</div>
+				</div>
+					
+				
 	        </div>
 
 	        <div class="tweets-container"></div>
