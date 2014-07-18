@@ -78,35 +78,41 @@ input:focus, textarea:focus {
 
 
 .Footer {
-	width: 290px;
-	height: 40px;
-	background-color: red;
+	width: 385px;
+	height: 25px;
 	position: absolute;
-	bottom: 10px;
+	bottom: 6px;
 	margin-left: auto;
 	margin-right: auto;
+	left: 0;
+	right: 0;
 }
 
 .sharebuttons {
-	width: 170px;
-	background-color: lime;
+	width: 168px;
+	height: 25px;
 }
 
-.tweet {
+.tweetshare {
 	float: left;
+	position: absolute;
+	bottom: 5px;
 }
 
-.like {
+.likeshare {
 	float: right;
 }
 
 .credits {
 	font-size: 12px;
-	float: right;
 	font-style: italic;
 	color: #BDBDBD;
 
+	position: relative;
+	bottom: 20px;
+	float: right;
 }
+
 .credits a {
 	color: #BDBDBD;
 	text-decoration: none;
