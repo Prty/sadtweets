@@ -10,7 +10,9 @@
 
 	var fullURL   = document.URL,
 		parsedURL = fullURL.slice(22),
-		tweetsTemplate;
+		tweetsTemplate,
+		shownTweets = [];
+
 
 	var methods = {
 		init: function () {
@@ -33,22 +35,25 @@
 				methods.getSadTweets('input');
 			});
 		},
-
-		
 		introsadtweets: function(){
 
 
-		 };
-
-
+		},
 		showSadTweets: function () {
 			// retrieve tweets from template in the DOM
       		var tweets 		= $('.tweet'),
 				firstTweet 	= tweets.first();        	
-
+				console.log(firstTweet.children());
+			
 			fadeFunction(firstTweet);
 
+			function getRandTweet() {
+
+			}
+
 			function fadeFunction(tweetElement) {
+				// console.log(tweet)
+				// shownTweets.push(tweetElement);
 				tweetElement.fadeIn( 1000, function() {
 					$(this).transition({scale: 1.06}, 5000);
 					$(this).fadeOut( 1000, function () {
@@ -86,6 +91,7 @@
 
 					$.each(data, function (idx, obj) {
 						var tweet = {
+							id: obj.id,
 							text: obj.text,
 							favorite_count: obj.favorite_count,
 							retweet_count: obj.retweet_count,
