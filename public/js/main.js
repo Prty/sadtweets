@@ -43,7 +43,7 @@
 			// retrieve tweets from template in the DOM
       		var tweets 		= $('.tweet'),
 				firstTweet 	= tweets.first();        	
-				console.log(firstTweet.children());
+				// console.log(firstTweet.children()[0].html());
 			
 			fadeFunction(firstTweet);
 
