@@ -129,6 +129,9 @@ input:focus, textarea:focus {
 .tweet {
 	height: 500px;
 	display: none;
+	font-family: "HelveticaNeue-Light", 
+	"Helvetica Neue Light", "Helvetica Neue", 
+	Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 .tweet-id {
