@@ -22,11 +22,17 @@
 		<!-- STYLING -->
 		<link rel="stylesheet" type="text/css" href="css/normalize.css"> 
 		<link rel="stylesheet" type="text/css" href="css/main.css">
-
+		
 	</head>
 
 
 	<body>
+		
+		<audio>
+			  <source src="assets/sadmusic.ogg" type="audio/ogg">
+			  <source src="assets/sadmusic.mp3" type="audio/mpeg">
+			  Your browser does not support audio.
+		</audio>
 
 		<div id="fb-root"></div>
 		<script>(function(d, s, id) {
@@ -38,6 +44,10 @@
 		}(document, 'script', 'facebook-jssdk'));</script>
 
 	    <div class="wrapper">
+
+	    	<div class="play">
+	    		play
+	    	</div>
 
 	    	<div class="intro-wrapper">
 				<div class="logo">
@@ -125,9 +135,34 @@
 		<script type="text/javascript" src="js/libs/jquery.transit.min.js"></script>
 		<script type="text/javascript" src="js/main.js"></script>
 
+
 		<script type="text/javascript">
 			window.SadTweets.init();
-		</script>
+
+
+			var audioElement = document.createElement('audio');
+	        audioElement.setAttribute('src', 'audio.mp3');
+	        audioElement.setAttribute('autoplay', 'autoplay');
+	        //audioElement.load()
+
+	        $.get();
+
+	        audioElement.addEventListener("load", function() {
+	            audioElement.play();
+	        }, true);
+
+	        $('.play').click(function() {
+	        	console.log('playing!')
+	            audioElement.play();
+	        });
+
+	        $('.pause').click(function() {
+	            audioElement.pause();
+	        });
+    
+
+    	</script>
+
 	</body>
 
 </html>
