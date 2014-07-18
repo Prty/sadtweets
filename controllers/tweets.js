@@ -55,9 +55,9 @@ exports.show = function(req, res) {
 				screenname: returnedData[i].user.screen_name,
 				profile_background: returnedData[i].user.profile_background_image_url,
 				profile_image: returnedData[i].user.profile_image_url,
-				created_at: returnedData[i].user.created_at,
+				created_at: returnedData[i].created_at,
 				relative_created_at: moment(returnedData[i].created_at).fromNow(true),
-				format_created_at: moment().format(returnedData[i].created_at)
+				format_created_at: parseTwitterDate(returnedData[i].created_at)
 			};
 			returnedDataObject[tweet.id] = tweet;
 			var currentLastTweetID = tweet.id;
@@ -70,7 +70,15 @@ exports.show = function(req, res) {
 	});
 
 
-
+	function parseTwitterDate(text) {
+		//running regex to grab everything after the time
+		var newtext = text.replace(/(\d{1,2}[:]\d{2}[:]\d{2}) (.*)/, '$2 $1');
+		//moving the time code to the end
+		newtext = newtext.replace(/(\+\S+) (.*)/, '$2 $1')
+		var date = new Date(Date.parse(newtext)).toLocaleDateString();
+		var time = new Date(Date.parse(newtext)).toLocaleTimeString();
+		return date;
+	}
 
 
 	console.log('Redirecting -> TweetsController.show');
