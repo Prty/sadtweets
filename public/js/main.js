@@ -103,6 +103,7 @@
 							text: obj.text,
 							favorite_count: obj.favorite_count,
 							retweet_count: obj.retweet_count,
+							username: obj.username,
 							screenname: obj.screenname,
 							link: obj.twitter_source_link,
 							profile_image: obj.profile_image,
