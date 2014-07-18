@@ -18,6 +18,8 @@
 		init: function () {
 			console.log('Sad Tweets js init!');
 
+			methods.showIntroSadTweets();
+
 			var source = $('#tweets-template').html();
 			tweetsTemplate = Handlebars.compile( source );
 
@@ -35,18 +37,24 @@
 				methods.getSadTweets('input');
 			});
 		},
-		introsadtweets: function(){
+		showIntroSadTweets: function(){
+			$( '.wrapper' ).fadeIn(2000);
 
+			$( '.field' ).on( 'click', function() {
+				$('.field').val('@');
+			});
 
 		},
 		showSadTweets: function () {
 			// retrieve tweets from template in the DOM
-      		var tweets 		= $('.tweet'),
-				firstTweet 	= tweets.first();        	
-				// console.log(firstTweet.children()[0].html());
-			
-			fadeFunction(firstTweet);
+			var tweets 		= $('.tweet'),
+				firstTweet 	= tweets.first(); 
 
+			introSadTweets = $('.intro-wrapper').fadeOut(function () {
+				fadeFunction(firstTweet);
+			});
+	       	
+			// console.log(firstTweet.children()[0].html());
 			function getRandTweet() {
 
 			}
