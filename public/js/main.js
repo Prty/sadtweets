@@ -33,6 +33,14 @@
 				methods.getSadTweets('input');
 			});
 		},
+
+		
+		introsadtweets: function(){
+
+
+		 };
+
+
 		showSadTweets: function () {
 			// retrieve tweets from template in the DOM
       		var tweets 		= $('.tweet'),
