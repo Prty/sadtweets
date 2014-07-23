@@ -17,7 +17,7 @@
 10 error You can get their info via:
 10 error     npm owner ls tweetsapp
 10 error There is likely additional logging output above.
-11 error System Darwin 13.2.0
+11 error System Darwin 13.3.0
 12 error command "node" "/Users/moises404/local/bin/npm" "start"
 13 error cwd /Users/moises404/Dropbox/Moises/Client/Party/Party_Projects/SadTweets-app
 14 error node -v v0.10.29

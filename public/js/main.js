@@ -47,10 +47,7 @@
 		},
 
 		showSadTweets: function () {
-
-			
-
-			audioElement.play();	//call audio
+			// audioElement.play();	//call audio
 
 			// retrieve tweets from template in the DOM								
 			var tweets 		= $('.tweet'),
@@ -66,11 +63,21 @@
 			}
 
 			function fadeFunction(tweetElement) {
-				// console.log(tweet)
-				// shownTweets.push(tweetElement);
+				var tweetElementID = tweetElement.children().children()[0].innerHTML;
+				shownTweets.push(tweetElementID);
+
+				// var nextRandTweet = tweets[Math.floor(Math.rand() * tweets.length)];
+				 // if (shownTweets)
+				console.log(tweets.length);
+
+				// shownTweets.indexOf(tweetElementID) 
+
+
+
 				tweetElement.fadeIn( 1000, function() {
 					$(this).transition({scale: 1.06}, 5000);
 					$(this).fadeOut( 1000, function () {
+
 						if (tweetElement.next().length) {
 							fadeFunction(tweetElement.next());
 						} else {

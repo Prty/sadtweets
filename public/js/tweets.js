@@ -15,7 +15,7 @@
 					$(this).fadeOut( 1000, function () {
 						// getRandTweet();
 						if (tweetElement.next().length) {
-								fadeFunction(tweetElement.next());
+							fadeFunction(tweetElement.next());
 						} else {
 							console.log('no more sad tweets!');
 							$('.fin').fadeIn(1000, function(){

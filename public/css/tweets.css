@@ -14,7 +14,7 @@ body {
 
 .tweet {
 	height: 500px;
-	display: none;
+	/*display: none;*/
 }
 
 .tweet-id {

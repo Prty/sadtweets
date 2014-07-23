@@ -2,6 +2,9 @@ body {
 	background: white;
 	font-family: "Times New Roman",Georgia,Serif;
 }
+a {
+	text-decoration: none;
+}
 .wrapper {
 	width: 800px;
 	margin: 0 auto;
@@ -129,9 +132,7 @@ input:focus, textarea:focus {
 .tweet {
 	height: 500px;
 	display: none;
-	font-family: "HelveticaNeue-Light", 
-	"Helvetica Neue Light", "Helvetica Neue", 
-	Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 }
 
 .tweet-id {
@@ -170,6 +171,8 @@ input:focus, textarea:focus {
 	height: 42px;
 	padding-top: 10px;
 	background-color: orange;
+	margin: 0;
+	padding: 0;
 	float: left;
 	-moz-border-radius: 7px;
 	-webkit-border-radius: 7px;
