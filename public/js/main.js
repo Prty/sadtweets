@@ -52,7 +52,7 @@
 			// retrieve tweets from template in the DOM								
 			var tweets 		= $('.tweet'),
 				firstTweet 	= tweets.first(),
-				sadTweetLength = tweets.length,
+				sadTweetsLength = tweets.length,
 				nextRandTweet;
 
 			introSadTweets = $('.intro-wrapper').fadeOut(function () {
@@ -60,47 +60,52 @@
 			});
 
 			function fadeFunction(tweetElement) {
-				// var tweetElementID = tweetElement.children().children()[0].innerHTML;
-				// shownTweets.push(tweetElementID);
-				// sadTweetLength--;
-				// nextRandTweet = getNextRandTweet();
-				// console.log(nextRandTweet);
-				// console.log(sadTweetLength);
-				
+
+				var tweetElementID = $(tweetElement).children().children()[0].innerHTML;
+				shownTweets.push(tweetElementID);
+				sadTweetsLength--;
+				nextRandTweet = getNextRandTweet();
+				console.log(nextRandTweet);
+				console.log(sadTweetsLength);
 
 
-				// function getNextRandTweet () {
-				// 	var randTweet = tweets[Math.floor(Math.rand() * tweets.length)];
-				// 	var randTweetID = randTweet.children().children()[0].innerHTML;
 
-				// 	if (!shownTweets.indexOf(randTweetID)) {
-				// 		return randTweet;
-				// 	} else {
-				// 		getNextRandTweet();
-				// 	}
-				// }
+				function getNextRandTweet () {
+					var randTweet = tweets[Math.floor(Math.random() * tweets.length)];
+					var randTweetID = $(randTweet).children().children()[0].innerHTML;
 
-				
-				console.log(tweets.length);
-
+					if (sadTweetsLength > 0 && !shownTweets.indexOf(randTweetID)) {
+						console.log('getNextRandTweet!');
+						getNextRandTweet();
+					} else if (sadTweetsLength === 0) {
+						$('.fin').fadeIn(1000, function(){
+							// $('this').load(function(){
+							// 	window.location.href = "http://prty.jp"
+							// });
+						});
+					} else {
+						return randTweet;
+					}
+				}
 				// shownTweets.indexOf(tweetElementID) 
 
 
 
-				tweetElement.fadeIn( 1000, function() {
+				$(tweetElement).fadeIn( 1000, function() {
 					$(this).transition({scale: 1.06}, 5000);
 					$(this).fadeOut( 1000, function () {
+						fadeFunction(nextRandTweet);
 
-						if (tweetElement.next().length) {
-							fadeFunction(tweetElement.next());
-						} else {
-							console.log('no more sad tweets!');
-							$('.fin').fadeIn(1000, function(){
-								// $('this').load(function(){
-								// 	window.location.href = "http://prty.jp"
-								// });
-							});
-						}
+						// if (tweetElement.next().length) {
+						// 	fadeFunction(tweetElement.next());
+						// } else {
+						// 	console.log('no more sad tweets!');
+						// 	$('.fin').fadeIn(1000, function(){
+						// 		// $('this').load(function(){
+						// 		// 	window.location.href = "http://prty.jp"
+						// 		// });
+						// 	});
+						// }
 					});
 				});
 			}
