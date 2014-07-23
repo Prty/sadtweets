@@ -281,7 +281,7 @@ input:focus, textarea:focus {
 
 
 /*  					*/
-/* No More Tweets Frame */
+/* 	No More Tweets 		*/
 /*						*/
 
 
@@ -324,13 +324,50 @@ input:focus, textarea:focus {
 
 
 
+/*  					*/
+/* 		No Tweets 		*/
+/*						*/
 
-.play {
-	width: 250px;
-	height: 60px;
-	background-color: lime;
 
+
+
+.none {
+	text-align: center;
+	color: #00aeef;
+	font-family: "Times New Roman",Georgia,Serif;
+	font-style: italic;
+	top: 140px;
+	width: 560px;
+	margin: 0 auto;
+	margin-top: 130px;
+	text-align: center;
 }
+
+.nonetitle {
+	font-size: 60px;
+	margin-bottom: 35px;
+}
+
+.nonetext {
+	font-size: 30px;
+	color: #9d9d9d;
+	margin-bottom: 35px;
+}
+
+.tryagain {
+	font-size: 30px;
+	color: #9d9d9d;
+	border-bottom: 1px solid;
+}
+
+
+
+
+
+
+
+
+
 
 
 
