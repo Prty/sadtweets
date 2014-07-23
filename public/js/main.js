@@ -51,23 +51,36 @@
 
 			// retrieve tweets from template in the DOM								
 			var tweets 		= $('.tweet'),
-				firstTweet 	= tweets.first(); 
+				firstTweet 	= tweets.first(),
+				sadTweetLength = tweets.length,
+				nextRandTweet;
 
 			introSadTweets = $('.intro-wrapper').fadeOut(function () {
 				fadeFunction(firstTweet);
 			});
-	       	
-			// console.log(firstTweet.children()[0].html());
-			function getRandTweet() {
-
-			}
 
 			function fadeFunction(tweetElement) {
-				var tweetElementID = tweetElement.children().children()[0].innerHTML;
-				shownTweets.push(tweetElementID);
+				// var tweetElementID = tweetElement.children().children()[0].innerHTML;
+				// shownTweets.push(tweetElementID);
+				// sadTweetLength--;
+				// nextRandTweet = getNextRandTweet();
+				// console.log(nextRandTweet);
+				// console.log(sadTweetLength);
+				
 
-				// var nextRandTweet = tweets[Math.floor(Math.rand() * tweets.length)];
-				 // if (shownTweets)
+
+				// function getNextRandTweet () {
+				// 	var randTweet = tweets[Math.floor(Math.rand() * tweets.length)];
+				// 	var randTweetID = randTweet.children().children()[0].innerHTML;
+
+				// 	if (!shownTweets.indexOf(randTweetID)) {
+				// 		return randTweet;
+				// 	} else {
+				// 		getNextRandTweet();
+				// 	}
+				// }
+
+				
 				console.log(tweets.length);
 
 				// shownTweets.indexOf(tweetElementID) 
