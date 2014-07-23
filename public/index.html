@@ -99,29 +99,31 @@
 
 		<!-- Record detail template. -->
 		<script id="tweets-template" type="text/x-handlebars-template">
-			<div class="tweet">  
-				<div class="tweet-id">{{id}}</div>  
-				<div class="title">{{relative_created_at}} without RT or Favorite... </div>    
-				<div class="frame">
-					<div class="profile"> 
-						<div class="profilepic">
-							<img class="profilepic" src="{{profile_image}}"/>
-						</div>
-						<div class="name">{{username}}</div>
-						<div class="handle">@{{screenname}}</div>
-					</div> <!-- profile -->
+			<a href="{{link}}">
+				<div class="tweet">  
+					<div class="tweet-id">{{id}}</div>  
+					<div class="title">{{relative_created_at}} without RT or Favorite... </div>    
+					<div class="frame">
+						<div class="profile"> 
+							<div class="profilepic">
+								<img class="profilepic" src="{{profile_image}}"/>
+							</div>
+							<div class="name">{{username}}</div>
+							<div class="handle">@{{screenname}}</div>
+						</div> <!-- profile -->
 
-					<div class="tweettext">{{text}}</div>
-					<div class="line"></div>
+						<div class="tweettext">{{text}}</div>
+						<div class="line"></div>
 
-					<div class="tweetbottom">
-						<div class="fav sub">Favorites {{favorite_count}}</div>
-						<div class="rt sub">Retweets {{retweet_count}}</div>
-					</div> <!-- tweetbottom -->
+						<div class="tweetbottom">
+							<div class="fav sub">Favorite {{favorite_count}}</div>
+							<div class="rt sub">Retweet {{retweet_count}}</div>
+						</div> <!-- tweetbottom -->
 
-					<div class="line2"></div>
-					<div class="date">{{format_created_at}}
-				</div>  <!-- frame -->
+						<div class="line2"></div>
+						<div class="date">{{format_created_at}}
+					</div>  <!-- frame -->
+				</a>
 			</div>
 		</script>
 

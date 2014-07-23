@@ -64,8 +64,8 @@ exports.show = function(req, res) {
 		}	
 	}
 		console.log('currentLastTweetID: ' + currentLastTweetID);
-		res.json(returnedDataObject);
-		// res.json(data);
+		// res.json(returnedDataObject);
+		res.json(data);
 		// res.redirect('index.html');
 	});
 
@@ -77,7 +77,7 @@ exports.show = function(req, res) {
 		newtext = newtext.replace(/(\+\S+) (.*)/, '$2 $1')
 		var date = new Date(Date.parse(newtext)).toLocaleDateString();
 		var time = new Date(Date.parse(newtext)).toLocaleTimeString();
-		return date;
+		return date + ' • ' + time;
 	}
 
 
