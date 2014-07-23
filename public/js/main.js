@@ -47,7 +47,7 @@
 		},
 
 		showSadTweets: function () {
-			// audioElement.play();	//call audio
+			 audioElement.play();	//call audio
 
 			// retrieve tweets from template in the DOM								
 			var tweets 		= $('.tweet'),

@@ -83,7 +83,7 @@ input:focus, textarea:focus {
 .Footer {
 	width: 385px;
 	height: 25px;
-	position: absolute;
+	position: fixed;
 	bottom: 6px;
 	margin-left: auto;
 	margin-right: auto;
