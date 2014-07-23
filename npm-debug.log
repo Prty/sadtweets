@@ -18,13 +18,8 @@
 10 error     npm owner ls tweetsapp
 10 error There is likely additional logging output above.
 11 error System Darwin 13.3.0
-<<<<<<< HEAD
 12 error command "node" "/Users/admin/local/bin/npm" "start"
 13 error cwd /Users/admin/Dropbox/Work/Sad Tweets/sadtweets
-=======
-12 error command "node" "/Users/moises404/local/bin/npm" "start"
-13 error cwd /Users/moises404/Dropbox/Moises/Client/Party/Party_Projects/SadTweets-app
->>>>>>> FETCH_HEAD
 14 error node -v v0.10.29
 15 error npm -v 1.4.20
 16 error code ELIFECYCLE
