@@ -324,14 +324,14 @@ input:focus, textarea:focus {
 
 
 
-/*  					*/
-/* 		No Tweets 		*/
-/*						*/
+/*  													*/
+/* 		PAGE (no tweets, user name) 		*/
+/*														*/
 
 
 
 
-.none {
+.page {
 	text-align: center;
 	color: #00aeef;
 	font-family: "Times New Roman",Georgia,Serif;
@@ -343,22 +343,35 @@ input:focus, textarea:focus {
 	text-align: center;
 }
 
-.nonetitle {
-	font-size: 60px;
+.pagetitle {
+	font-size: 50px;
 	margin-bottom: 35px;
 }
 
-.nonetext {
+.pagetitle a {
+	color: #00aeef;
+}
+
+.pagetext {
 	font-size: 30px;
 	color: #9d9d9d;
 	margin-bottom: 35px;
 }
 
-.tryagain {
+.pagelink {
 	font-size: 30px;
 	color: #9d9d9d;
 	border-bottom: 1px solid;
 }
+
+
+
+
+
+/*  					*/
+/* 		USER NAME 		*/
+/*						*/
+
 
 
 
