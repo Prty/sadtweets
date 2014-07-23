@@ -40,10 +40,10 @@ exports.show = function(req, res) {
 			if (returnedData[i].retweet_count === 0 && returnedData[i].favorite_count === 0 && returnedData[i].in_reply_to_status_id === null && returnedData[i].entities.user_mentions.length === 0) {
 
 			var tweet = {
-				id: returnedData[i].id,
+				id: returnedData[i].id_str,
 				text: returnedData[i].text,
 				source: returnedData[i].source,
-				twitter_source_link: 'https://twitter.com/' + returnedData[i].user.screen_name + '/status/' + returnedData[i].id,
+				twitter_source_link: 'https://twitter.com/' + returnedData[i].user.screen_name + '/status/' + returnedData[i].id_str,
 				retweet_count: returnedData[i].retweet_count,
 				favorite_count: returnedData[i].favorite_count,
 				retweeted: returnedData[i].favorited,
@@ -77,7 +77,7 @@ exports.show = function(req, res) {
 		newtext = newtext.replace(/(\+\S+) (.*)/, '$2 $1')
 		var date = new Date(Date.parse(newtext)).toLocaleDateString();
 		var time = new Date(Date.parse(newtext)).toLocaleTimeString();
-		return date;
+		return date + ' • ' + time;
 	}
 
 

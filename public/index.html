@@ -71,7 +71,7 @@
 							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
 						</div>
 					</div>					
-						<div class="credits">
+					<div class="credits">
 			            Made at <a href="http://twitter.com/prty_ny" target="_blank">Party NY</a>, 
 			            by <a href="http://twitter.com/tweetsnotfound" target="_blank"> ART404</a> and <a href="http://twitter.com/tomgalle/" target="_blank">Tom</a>
 	        		</div>
@@ -81,15 +81,7 @@
 
 	        <div class="tweets-container"></div>
 
-			
-			<!-- USER SAD TWEETS -->
-			
-			
-
-
-
-
-	       	<!-- NO SAD TWEETS -->
+	        <!-- NO SAD TWEETS -->
 	        <div class="fin">
 	            No More Sad Tweets
 	            <div class="endwrap">
@@ -101,10 +93,6 @@
 
 	    </div>
         
-
-
-
-
 		<!--		   -->
 		<!-- TEMPLATES -->
 		<!--		   -->
@@ -112,28 +100,30 @@
 		<!-- Record detail template. -->
 		<script id="tweets-template" type="text/x-handlebars-template">
 			<div class="tweet">  
-				<div class="tweet-id">{{id}}</div>  
-				<div class="title">{{relative_created_at}} without RT or Favorite... </div>    
-				<div class="frame">
-					<div class="profile"> 
-						<div class="profilepic">
-							<img class="profilepic" src="{{profile_image}}"/>
-						</div>
-						<div class="name">{{username}}</div>
-						<div class="handle">@{{screenname}}</div>
-					</div> <!-- profile -->
+				<a target="_blank" href="{{link}}">
+					<div class="tweet-id">{{id}}</div>  
+					<div class="title">{{relative_created_at}} without RT or Favorite... </div>    
+					<div class="frame">
+						<div class="profile"> 
+							<div class="profilepic">
+								<img class="profilepic" src="{{profile_image}}"/>
+							</div>
+							<div class="name">{{username}}</div>
+							<div class="handle">@{{screenname}}</div>
+						</div> <!-- profile -->
 
-					<div class="tweettext">{{text}}</div>
-					<div class="line"></div>
+						<div class="tweettext">{{text}}</div>
+						<div class="line"></div>
 
-					<div class="tweetbottom">
-						<div class="fav sub">Favorites {{favorite_count}}</div>
-						<div class="rt sub">Retweets {{retweet_count}}</div>
-					</div> <!-- tweetbottom -->
+						<div class="tweetbottom">
+							<div class="fav sub">Favorite {{favorite_count}}</div>
+							<div class="rt sub">Retweet {{retweet_count}}</div>
+						</div> <!-- tweetbottom -->
 
-					<div class="line2"></div>
-					<div class="date">{{format_created_at}}
-				</div>  <!-- frame -->
+						<div class="line2"></div>
+						<div class="date">{{format_created_at}}
+					</div>  <!-- frame -->
+				</a>
 			</div>
 		</script>
 
