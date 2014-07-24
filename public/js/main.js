@@ -157,14 +157,14 @@
 			}// end of params
 
 			if (context === 'url') {
-				params.url = 'http://localhost:3000/tweets/' + parsedURL
+				params.url = 'http://sad-tweets.herokuapp.com/tweets/' + parsedURL
 			} else if (context === 'input') {
 	
 				// fetch data from input form
 				var raw_twitterhandle = $('.twitter-form-input').val();
 				var twitterhandle = raw_twitterhandle.substr(1);
 				console.log(twitterhandle);
-				params.url = 'http://localhost:3000/tweets/' + twitterhandle
+				params.url = 'http://sad-tweets.herokuapp.com/tweets/' + twitterhandle
 				
 			}// enf of if statement
 			$.ajax(params);
