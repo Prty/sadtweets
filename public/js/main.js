@@ -53,6 +53,7 @@
 			 audioElement.play();	//call audio
 			 $('.footer_tweets').fadeIn(2000); // fadein second footer
 
+
 			// retrieve tweets from template in the DOM								
 			var tweets 		= $('.tweet'),
 				firstTweet 	= tweets.first(),
@@ -60,60 +61,42 @@
 				nextRandTweet;
 
 			introSadTweets = $('.intro-wrapper').fadeOut(function () {
-				fadeFunction(firstTweet);
+				methods.fadeFunction(firstTweet);
 			});
-
-			function fadeFunction(tweetElement) {
-
-				var tweetElementID = $(tweetElement).children().children()[0].innerHTML;
-				shownTweets.push(tweetElementID);
-				sadTweetsLength--;
-				nextRandTweet = getNextRandTweet();
-				console.log(nextRandTweet);
-				console.log(sadTweetsLength);
-
-
-
-				function getNextRandTweet () {
-					var randTweet = tweets[Math.floor(Math.random() * tweets.length)];
-					var randTweetID = $(randTweet).children().children()[0].innerHTML;
-
-					if (sadTweetsLength > 0 && !shownTweets.indexOf(randTweetID)) {
-						console.log('getNextRandTweet!');
-						getNextRandTweet();
-					} else if (sadTweetsLength === 0) {
-						$('.fin').fadeIn(1000, function(){
-							// $('this').load(function(){
-							// 	window.location.href = "http://prty.jp"
-							// });
-						});
-					} else {
-						return randTweet;
-					}
-				}
-				// shownTweets.indexOf(tweetElementID) 
-
-
-
-				$(tweetElement).fadeIn( 1000, function() {
-					$(this).transition({scale: 1.06}, 5000);
-					$(this).fadeOut( 1000, function () {
-						fadeFunction(nextRandTweet);
-
-						// if (tweetElement.next().length) {
-						// 	fadeFunction(tweetElement.next());
-						// } else {
-						// 	console.log('no more sad tweets!');
-						// 	$('.fin').fadeIn(1000, function(){
-						// 		// $('this').load(function(){
-						// 		// 	window.location.href = "http://prty.jp"
-						// 		// });
-						// 	});
-						// }
-					});
-				});
-			}
        	},
+       	fadeFunction: function (tweetElement) {
+			console.log('tweetElement!')
+			console.log(tweetElement);
+			var tweetElementID = $(tweetElement).children().children()[0].innerHTML;
+			shownTweets.push(tweetElementID);
+			sadTweetsLength--;
+			nextRandTweet = getNextRandTweet();
+			console.log(sadTweetsLength);
+
+			$(tweetElement).fadeIn( 1000, function() {
+				$(this).transition({scale: 1.06}, 5000);
+				$(this).fadeOut( 1000, function () {
+					fadeFunction(nextRandTweet);
+				});
+			});
+		},
+		getNextRandTweet: function () {
+			var randTweet = tweets[Math.floor(Math.random() * tweets.length)];
+			var randTweetID = $(randTweet).children().children()[0].innerHTML;
+			console.log('randTweet: ' + randTweet);
+			console.log('randTweetID: ' + randTweetID);
+
+			if (sadTweetsLength > 0 && shownTweets.indexOf(randTweetID) === false) {
+				console.log(randTweet);		
+				return randTweet;
+			} else if (sadTweetsLength > 0 && shownTweets.indexOf(randTweetID) === true) {
+				console.log('getNextRandTweet!');
+				console.log(randTweet);	
+				getNextRandTweet();
+			} else if (sadTweetsLength === 0) {
+				$('.fin').fadeIn(1000);
+			}
+		},
 		getSadTweets: function (context) {
 			
 			var params = {
