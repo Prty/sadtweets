@@ -12,13 +12,42 @@ a {
 	margin: 0 auto;
 	display: none;
 }
-
 .logo {
 	width: 650px;
 	height: 110px;
 	margin: 0 auto;
-	padding-top: 80px;
+	padding-top: 80px;back
 }
+
+.tear {
+	background-color: white;
+	height: 20px;
+	width: 20px;
+	float: right;
+	position: relative;
+	top: 45px;
+	right: 25px;
+	border-bottom-right-radius: 60%;
+  	border-bottom-left-radius: 60%;
+  	border-top-left-radius: 60%;
+	-webkit-transform:rotate(-45deg);
+}
+
+/*
+.teardrop {
+  margin-top: 50px;
+  margin-left: 50px;
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-bottom-right-radius: 50%;
+  border-bottom-left-radius: 50%;
+  border-top-left-radius: 50%;
+  -webkit-transform:rotate(-45deg);
+  z-index: 99;
+  background: blue;
+}*/
+
 
 .middle {
 	text-align: center;
@@ -355,6 +384,62 @@ input:focus, textarea:focus {
 .user {
 	display: none;
 }
+
+
+
+
+
+
+/*  					*/
+/* 	FOOTER TWEETS   	*/
+/*						*/
+
+
+
+.footer_tweets {
+	display: none;
+	font-style: italic;
+	color: #9d9d9d;
+	font-size: 17px;
+}
+
+.onlybird2 {
+	position: fixed;
+	bottom: 15px;
+	left: 15px;
+}
+
+.shareyourtweets {
+	list-style: none;
+	width: 370px;
+	height: 20px;
+	margin: 0 auto;
+	position: fixed;
+	bottom: 15px;
+	left: 0;
+	right: 0;
+}
+
+.shareyourtweets a {
+	padding: 0 4 0 4;
+	color: #9d9d9d;
+	cursor: pointer;
+}
+
+.shareyourtweets a:hover {
+	color: #00aeef;
+}
+
+/*.tweets-share-container {
+	border-bottom: 1px solid;
+}
+*/
+
+
+
+
+
+
 
 
 
