@@ -11,7 +11,10 @@
 	var fullURL   = document.URL,
 		parsedURL = fullURL.slice(23),
 		tweetsTemplate,
-		shownTweets = [];
+		shownTweets = [],
+		sadTweetsLength,
+		nextRandTweet,
+		tweets;
 
 
 	var methods = {
@@ -30,10 +33,6 @@
 				methods.getSadTweets('url');	
 			}
 
-			// history.pushState(null, null, 'twitterhandle');
-			// console.log(document.URL);
-			
-
 			// Init getSadTweets input form event handler
 			$('.get-sadtweets-button').on('click', function (e) {
 				e.preventDefault();
@@ -43,56 +42,64 @@
 
 		showIntroSadTweets: function(){
 			$( '.wrapper' ).fadeIn(2000);
-
 			$( '.field' ).on( 'click', function() {
 				$('.field').val('@');
 			});
 		},
 
 		showSadTweets: function () {
-			audioElement.play();	//call audio
-
+			// audioElement.play();	//call audio
 			// retrieve tweets from template in the DOM								
-			var tweets 		= $('.tweet'),
-				firstTweet 	= tweets.first(),
-				sadTweetsLength = tweets.length,
-				nextRandTweet;
+			tweets 		= $('.tweet'),
+			firstTweet 	= tweets[0],
+			sadTweetsLength = tweets.length;
+			console.log(sadTweetsLength);
 
-			introSadTweets = $('.intro-wrapper').fadeOut(function () {
+			console.log(tweets);
+
+			$('.intro-wrapper').fadeOut(function () {
 				methods.fadeFunction(firstTweet);
 			});
        	},
        	fadeFunction: function (tweetElement) {
-			console.log('tweetElement!')
-			console.log(tweetElement);
+       		console.log(tweetElement);
+       		shownTweets.push(tweetElementID);
+       		console.log('shownTweets:');
+       		console.log(shownTweets);
 			var tweetElementID = $(tweetElement).children().children()[0].innerHTML;
-			shownTweets.push(tweetElementID);
 			sadTweetsLength--;
-			nextRandTweet = getNextRandTweet();
-			console.log(sadTweetsLength);
+			console.log('sadTweetsLength: ' + sadTweetsLength);
+			nextRandTweet = methods.getNextRandTweet();
 
 			$(tweetElement).fadeIn( 1000, function() {
 				$(this).transition({scale: 1.06}, 5000);
 				$(this).fadeOut( 1000, function () {
-					fadeFunction(nextRandTweet);
+					methods.fadeFunction(nextRandTweet);
 				});
 			});
 		},
 		getNextRandTweet: function () {
-			var randTweet = tweets[Math.floor(Math.random() * tweets.length)];
+			var randNum = Math.floor(Math.random() * tweets.length);
+			console.log('randNum: ' + randNum);
+			var randTweet = tweets[randNum];
+			console.log('randTweet');
+			console.log(randTweet);
 			var randTweetID = $(randTweet).children().children()[0].innerHTML;
-			console.log('randTweet: ' + randTweet);
 			console.log('randTweetID: ' + randTweetID);
+			console.log('shownTweets.indexOf');
+			console.log(shownTweets.indexOf(randTweetID));
+			var indexOfSadTweets = shownTweets.indexOf(randTweetID);
 
-			if (sadTweetsLength > 0 && shownTweets.indexOf(randTweetID) === false) {
-				console.log(randTweet);		
+			if (sadTweetsLength > 0 && indexOfSadTweets === -1) {
+				console.log('randTweet is not in ShownTweetsArray');		
 				return randTweet;
-			} else if (sadTweetsLength > 0 && shownTweets.indexOf(randTweetID) === true) {
-				console.log('getNextRandTweet!');
-				console.log(randTweet);	
-				getNextRandTweet();
+			} else if (sadTweetsLength > 0 && indexOfSadTweets > -1) {
+				console.log('getNextRandTweet');
+				methods.getNextRandTweet();
 			} else if (sadTweetsLength === 0) {
 				$('.fin').fadeIn(1000);
+			} else {
+				console.log('WTF!!!');
 			}
 		},
 		getSadTweets: function (context) {
