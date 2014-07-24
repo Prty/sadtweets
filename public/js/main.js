@@ -23,6 +23,9 @@
 			var source = $('#tweets-template').html();
 			tweetsTemplate = Handlebars.compile( source );
 
+			var source = $('#tweets-share-template').html();
+			tweetsShareTemplate = Handlebars.compile( source );
+
 			if (parsedURL.length > -1) {
 				methods.getSadTweets('url');	
 			}
@@ -158,6 +161,8 @@
 
 			if (context === 'url') {
 				params.url = 'http://localhost:3000/tweets/' + parsedURL
+
+				var html = tweetsShareTemplate(parsedURL);
 			} else if (context === 'input') {
 	
 				// fetch data from input form
@@ -166,6 +171,10 @@
 				console.log(twitterhandle);
 				params.url = 'http://localhost:3000/tweets/' + twitterhandle
 				
+				var html = tweetsShareTemplate(parsedURL);
+
+				tweetShareContainer = $('.tweets-share-container');
+				tweetShareContainer.append(html);
 			}// enf of if statement
 			$.ajax(params);
 		} // end of getSadTweets

@@ -127,6 +127,10 @@
 			</div>
 		</script>
 
+		<script id="tweets-share-template" type="text/x-handlebars-template">
+			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://sadtweets.com/{{username}}" data-via="prty_ny" data-hashtags="sadtweets">Tweet</a>
+		</script>
+
 		<!-- JAVASCRIPT -->
 		<script type="text/javascript" src="js/libs/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="js/libs/handlebars.js"></script>
@@ -136,8 +140,7 @@
 
 		<script type="text/javascript">
 			window.SadTweets.init();
-
-	      	
+      	
 		        audioElement = document.createElement('audio');
 		        audioElement.setAttribute('src', 'http://tomgalle.com/assets/sadmusic2.mp3');
 		        audioElement.setAttribute('loop', 'loop');
@@ -149,8 +152,6 @@
 		        $('.pause').click(function() {
 		        audioElement.pause();
 		        });
-
-   
 
     	</script>
 
