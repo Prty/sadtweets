@@ -13,6 +13,8 @@
 		tweetsTemplate,
 		shownTweets = [];
 
+		console.log(parsedURl);
+
 
 	var methods = {
 		init: function () {
