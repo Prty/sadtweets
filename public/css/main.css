@@ -304,14 +304,38 @@ input:focus, textarea:focus {
 
 
 
+/*  					*/
+/* 		PAGE			*/
+/*						*/
 
 
-.play {
-	width: 250px;
-	height: 60px;
-	background-color: lime;
 
+
+
+
+
+
+
+.notweets {
+	display: none;
 }
+
+.user {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
