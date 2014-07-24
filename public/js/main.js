@@ -113,7 +113,7 @@
 		getSadTweets: function (context) {
 			
 			var params = {
-				url: 'http://localhost:3000/tweets/' + twitterhandle,
+				url: 'http://sad-tweets.herokuapp.com/tweets/' + twitterhandle,
 				dataType: 'json',
 				success: function (data) {
 					console.log(data);
