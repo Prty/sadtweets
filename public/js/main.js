@@ -13,8 +13,6 @@
 		tweetsTemplate,
 		shownTweets = [];
 
-		console.log(parsedURL);
-
 
 	var methods = {
 		init: function () {
@@ -115,7 +113,7 @@
 		getSadTweets: function (context) {
 			
 			var params = {
-				url: 'http://localhost:3000/' + twitterhandle,
+				url: 'http://localhost:3000/tweets/' + twitterhandle,
 				dataType: 'json',
 				success: function (data) {
 					console.log(data);
@@ -159,14 +157,14 @@
 			}// end of params
 
 			if (context === 'url') {
-				params.url = 'http://localhost:3000/' + parsedURL
+				params.url = 'http://localhost:3000/tweets/' + parsedURL
 			} else if (context === 'input') {
 	
 				// fetch data from input form
 				var raw_twitterhandle = $('.twitter-form-input').val();
 				var twitterhandle = raw_twitterhandle.substr(1);
 				console.log(twitterhandle);
-				params.url = 'http://localhost:3000/' + twitterhandle
+				params.url = 'http://localhost:3000/tweets/' + twitterhandle
 				
 			}// enf of if statement
 			$.ajax(params);
