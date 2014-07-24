@@ -2,21 +2,25 @@ body {
 	background: white;
 	font-family: "Times New Roman",Georgia,Serif;
 }
+
 a {
 	text-decoration: none;
 }
+
 .wrapper {
 	width: 800px;
 	margin: 0 auto;
 	display: none;
 	height: 100%;
 }
+
 .logo {
 	width: 650px;
 	height: 110px;
 	margin: 0 auto;
 	padding-top: 80px;
 }
+
 .middle {
 	text-align: center;
 	padding-top: 45px;
@@ -24,10 +28,12 @@ a {
 	font-size: 48px;
 	color: #464646;
 }
+
 .forms {
 	margin: 0 auto;
 	width: 556px;
 }
+
 .field {
 	font-family: "Times New Roman",Georgia,Serif;
 	font-style: italic;
@@ -312,37 +318,39 @@ input:focus, textarea:focus {
 
 .page {
 	text-align: center;
-	font-size: 65px;
-	color: #00aeef;
 	font-family: "Times New Roman",Georgia,Serif;
 	font-style: italic;
-	position: absolute;
-	top: 140px;
-	left: 0; 
-	right: 0;
-	display: none;
-	width: 560px;
-	margin: 0 auto;
+	padding-top: 100px;
+}
+
+
+.pagetitle {
+	font-size: 50px;
+	color: #00aeef;
 	margin-bottom: 40px;
+}
 
-
+.pagetitle a {
+	color: #00aeef;
 }
 
 .pagetext {
-
-}
-
-.pagelinke {
-
-
+	font-size: 30px;
+	color: #353535;
+	margin-bottom: 40px;
 }
 
 
+.pagelink {
+	font-size: 30px;
+	color: #353535;
+	border-bottom: 1px solid;
+}
 
 
 
 .notweets {
-	/*display: none;*/
+	display: none;
 }
 
 .user {
