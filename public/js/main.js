@@ -9,7 +9,7 @@
 	};
 
 	var fullURL   = document.URL,
-		parsedURL = fullURL.slice(23),
+		parsedURL = fullURL.slice(30),
 		tweetsTemplate,
 		shownTweets = [];
 
