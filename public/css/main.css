@@ -11,7 +11,6 @@ a {
 	width: 800px;
 	margin: 0 auto;
 	display: none;
-	height: 100%;
 }
 
 .logo {
@@ -129,11 +128,10 @@ input:focus, textarea:focus {
 
 
 
-
-
 /* 			*/
 /*  TWEETS 	*/
 /*			*/
+
 
 .tweet {
 	height: 500px;
@@ -146,25 +144,24 @@ input:focus, textarea:focus {
 }
 .frame {
 	width: 650px;
-	height: 300px;
 	background-color: white;
 	margin: 0 auto;
-	margin-top: 60px;
+	margin-top: 50px;
 	border: 1px solid #dbdbdb;
 	text-align: left;
 	-moz-border-radius: 6px;
 	-webkit-border-radius: 6px;
 	border-radius: 6px; /* future proofing */
 	-khtml-border-radius: 6px; /* for old Konqueror browsers */
-/*	display: none;*/
 }
+
 .title {
 	text-align: center;
-	font-size: 30px;
+	font-size: 36px;
 	color: #353535;
 	font-family: "Times New Roman",Georgia,Serif;
 	font-style: italic;
-	margin-top: 120px;
+	margin-top: 95px;
 
 }
 .profile {
@@ -172,11 +169,11 @@ input:focus, textarea:focus {
 	height: 52px;
 	width: 200px;
 }
+
 .profilepic {
-	width: 52px;
-	height: 42px;
+	width: 50px;
+	height: 50px;
 	padding-top: 10px;
-	background-color: orange;
 	margin: 0;
 	padding: 0;
 	float: left;
@@ -184,18 +181,18 @@ input:focus, textarea:focus {
 	-webkit-border-radius: 7px;
 	border-radius: 7px; /* future proofing */
 	-khtml-border-radius: 7px; /* for old Konqueror browsers */
-	
 }
-.circle {
+
+/*.circle {
 	width: 18px;
 	height: 30px;
 	background-color: #fafafa;
 	margin: 0 auto;
 	-moz-border-radius: 50%;
 	-webkit-border-radius: 50%;
-	border-radius: 50%; /* future proofing */
-	-khtml-border-radius: 50%; /* for old Konqueror browsers */
-}
+	border-radius: 50%;
+	-khtml-border-radius: 50%; 
+}*/
 .name {
 	font-size: 17px;
 	letter-spacing: 1px;
@@ -220,8 +217,11 @@ input:focus, textarea:focus {
 	font-size: 32px;
 	margin-left: 40px;
 	margin-top: 10px;
+	margin-bottom: 1px;
 	font-weight: 300;
 	color: #353535;
+	width: 572px;
+
 }
 .line {
 	width: 570px;
@@ -264,6 +264,8 @@ input:focus, textarea:focus {
 	font-size: 12px;
 	color: #9d9d9d;
 	margin-left: 40px;
+	margin-bottom: 18px;
+	letter-spacing: .03em;
 }
 
 
@@ -340,14 +342,11 @@ input:focus, textarea:focus {
 	margin-bottom: 40px;
 }
 
-
 .pagelink {
 	font-size: 30px;
 	color: #353535;
 	border-bottom: 1px solid;
 }
-
-
 
 .notweets {
 	display: none;
