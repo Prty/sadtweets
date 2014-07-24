@@ -38,7 +38,6 @@
 		}(document, 'script', 'facebook-jssdk'));</script>
 
 	    <div class="wrapper">
-
 	    	<div class="intro-wrapper">
 				<div class="logo">
 					<img src="img/sadtweetslogo.png" width="650" height="110"></img>
@@ -69,13 +68,22 @@
 			            Made at <a href="http://twitter.com/prty_ny" target="_blank">Party NY</a>, 
 			            by <a href="http://twitter.com/tweetsnotfound" target="_blank"> ART404</a> and <a href="http://twitter.com/tomgalle/" target="_blank">Tom</a>
 	        		</div>
-				</div>
+				</div> 
+	        </div> <!-- intro_wrapper -->
 
-	        </div>
-
+			<!-- TWEETS CONTAINER -->
 	        <div class="tweets-container"></div>
-	        <div class="tweets-share-container"></div>
 
+			<!-- FOOTER TWEETS -->
+	        <div class="footer_tweets">
+	        	<a class="onlybird2" href="index.html"><img src="img/onlybird.png" width="35" height="29"></img></a>
+	        	<div class="shareyourtweets">
+		        	<a class="tweets-share-container"></a>
+		        	<a class="tweets-share-container-facebook">Share on Facebook</a>
+		        	<a class="tweets-share-container-link">Copy Link</a>
+		        </div>
+	        </div>
+	        
 	        <!-- NO MORE TWEETS -->
 	        <div class="fin">
 	            No More Sad Tweets
@@ -85,7 +93,6 @@
 	                <a href="index.html" class="end back">Back</a>    
 	            </div>
 	        </div>
-
 
 			<!-- NO SAD TWEETS -->
 	       	<div class="page notweets">
@@ -100,8 +107,8 @@
 	            <!-- <a class="pagelink" href="index.html">Discover Yours</a> -->
 	        </div>
 
-
 	    </div> <!--wrapper -->
+
         
 		<!--		   -->
 		<!-- TEMPLATES -->
@@ -137,8 +144,9 @@
 			</div>
 		</script>
 
+		<!-- Tweets Share Template -->
 		<script id="tweets-share-template" type="text/x-handlebars-template">
-			<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://sadtweets.com/{{username}}" data-via="prty_ny" data-hashtags="sadtweets">Tweet</a>
+			<a href="https://twitter.com/share" target="_blank" class="twitter-share-button" data-url="http://sadtweets.com/{{username}}" data-via="prty_ny" data-hashtags="sadtweets">Share on Twitter</a>
 		</script>
 
 		<!-- JAVASCRIPT -->

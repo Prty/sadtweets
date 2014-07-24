@@ -361,6 +361,62 @@ input:focus, textarea:focus {
 
 
 
+/*  					*/
+/* 	FOOTER TWEETS   	*/
+/*						*/
+
+
+
+.footer_tweets {
+	display: none;
+	font-style: italic;
+	color: #9d9d9d;
+	font-size: 17px;
+}
+
+.onlybird2 {
+	position: fixed;
+	bottom: 15px;
+	left: 15px;
+}
+
+.shareyourtweets {
+	list-style: none;
+	width: 370px;
+	height: 20px;
+	margin: 0 auto;
+	position: fixed;
+	bottom: 15px;
+	left: 0;
+	right: 0;
+}
+
+.shareyourtweets a {
+	padding: 0 4 0 4;
+	color: #9d9d9d;
+	cursor: pointer;
+}
+
+.shareyourtweets a:hover {
+	color: #00aeef;
+}
+
+/*.tweets-share-container {
+	border-bottom: 1px solid;
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
