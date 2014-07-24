@@ -9,11 +9,11 @@
 	};
 
 	var fullURL   = document.URL,
-		parsedURL = fullURL.slice(30),
+		parsedURL = fullURL.slice(23),
 		tweetsTemplate,
 		shownTweets = [];
 
-		console.log(parsedURl);
+		console.log(parsedURL);
 
 
 	var methods = {
@@ -115,7 +115,7 @@
 		getSadTweets: function (context) {
 			
 			var params = {
-				url: 'http://sad-tweets.herokuapp.com/tweets/' + twitterhandle,
+				url: 'http://localhost:3000/' + twitterhandle,
 				dataType: 'json',
 				success: function (data) {
 					console.log(data);
@@ -159,14 +159,14 @@
 			}// end of params
 
 			if (context === 'url') {
-				params.url = 'http://sad-tweets.herokuapp.com/tweets/' + parsedURL
+				params.url = 'http://localhost:3000/' + parsedURL
 			} else if (context === 'input') {
 	
 				// fetch data from input form
 				var raw_twitterhandle = $('.twitter-form-input').val();
 				var twitterhandle = raw_twitterhandle.substr(1);
 				console.log(twitterhandle);
-				params.url = 'http://sad-tweets.herokuapp.com/tweets/' + twitterhandle
+				params.url = 'http://localhost:3000/' + twitterhandle
 				
 			}// enf of if statement
 			$.ajax(params);
