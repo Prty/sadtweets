@@ -310,14 +310,39 @@ input:focus, textarea:focus {
 
 
 
+.page {
+	text-align: center;
+	font-size: 65px;
+	color: #00aeef;
+	font-family: "Times New Roman",Georgia,Serif;
+	font-style: italic;
+	position: absolute;
+	top: 140px;
+	left: 0; 
+	right: 0;
+	display: none;
+	width: 560px;
+	margin: 0 auto;
+	margin-bottom: 40px;
 
+
+}
+
+.pagetext {
+
+}
+
+.pagelinke {
+
+
+}
 
 
 
 
 
 .notweets {
-	display: none;
+	/*display: none;*/
 }
 
 .user {
