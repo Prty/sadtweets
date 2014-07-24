@@ -48,7 +48,7 @@
 		},
 
 		showSadTweets: function () {
-			audioElement.play();	//call audio
+			// audioElement.play();	//call audio
 			$('.footer_tweets').fadeIn(2000); // fadein second footer
 			
 			// retrieve tweets from template in the DOM								
@@ -113,41 +113,47 @@
 					console.log(data);
 					var dataLength = Object.size(data);
 
-					// history.pushState(null, null, twitterhandle);
+					if (dataLength) {
+						// history.pushState(null, null, twitterhandle);
 
-					///////////////////////////////
-					// HANDLE BAR SUCESS ACTIONS //
-					///////////////////////////////
+						///////////////////////////////
+						// HANDLE BAR SUCESS ACTIONS //
+						///////////////////////////////
 
-					tweetContainer = $('.tweets-container');
-					tweetContainer.empty();
+						tweetContainer = $('.tweets-container');
+						tweetContainer.empty();
 
-					$.each(data, function (idx, obj) {
-						var tweet = {
-							id: obj.id,
-							text: obj.text,
-							favorite_count: obj.favorite_count,
-							retweet_count: obj.retweet_count,
-							username: obj.username,
-							screenname: obj.screenname,
-							link: obj.twitter_source_link,
-							profile_image: obj.profile_image,
-							profile_background: obj.profile_background,
-							created_at: obj.created_at,
-							relative_created_at: obj.relative_created_at,
-							format_created_at: obj.format_created_at
-						}
-						console.log(obj.text);
-						var html = tweetsTemplate(tweet);
-						tweetContainer.append(html);
-					});
+						$.each(data, function (idx, obj) {
+							var tweet = {
+								id: obj.id,
+								text: obj.text,
+								favorite_count: obj.favorite_count,
+								retweet_count: obj.retweet_count,
+								username: obj.username,
+								screenname: obj.screenname,
+								link: obj.twitter_source_link,
+								profile_image: obj.profile_image,
+								profile_background: obj.profile_background,
+								created_at: obj.created_at,
+								relative_created_at: obj.relative_created_at,
+								format_created_at: obj.format_created_at
+							}
+							console.log(obj.text);
+							var html = tweetsTemplate(tweet);
+							tweetContainer.append(html);
+						});
 
-					history.pushState(null, null, twitterhandle);
-					methods.showSadTweets();
-					// 	console.log(html);
-						
-					// } // end of for loop
-				} // end of sucess
+						history.pushState(null, null, twitterhandle);
+						methods.showSadTweets();
+						// 	console.log(html);
+							
+						// } // end of for loop
+					} else {
+						$('.intro-wrapper').fadeOut(function () {
+							$('.notweets').fadeIn();
+						});
+					}	
+				} // end of success
 			}// end of params
 
 			if (context === 'url') {
