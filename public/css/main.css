@@ -16,43 +16,17 @@ a {
 	width: 650px;
 	height: 110px;
 	margin: 0 auto;
-	padding-top: 80px;back
+	padding-top: 80px;
 }
 
 .tear {
-	background-color: white;
-	height: 17px;
-	width: 17px;
-	float: right;
+	width: 15px;
+	height: 20px;
+	z-index: 100;
 	position: relative;
-	top: 45px;
-	right: 31px;
-	border-bottom-right-radius: 60%;
-  	border-bottom-left-radius: 60%;
-  	border-top-left-radius: 60%;
-	-webkit-transform:rotate(-45deg);
+	left: 602px;
+	top: 43px;
 }
-
-
-
-
-
-
-/*
-.teardrop {
-  margin-top: 50px;
-  margin-left: 50px;
-  width: 100px;
-  height: 100px;
-  overflow: hidden;
-  border-bottom-right-radius: 50%;
-  border-bottom-left-radius: 50%;
-  border-top-left-radius: 50%;
-  -webkit-transform:rotate(-45deg);
-  z-index: 99;
-  background: blue;
-}*/
-
 
 .middle {
 	text-align: center;

@@ -40,10 +40,24 @@
 
 	    <div class="wrapper">
 	    	<div class="intro-wrapper">
-				<div class="logo">
-					<div class="tear"></div>
-					<img src="img/sadtweetslogo_notear.png" width="650" height="110"></img>
+<!-- 	    		<img id="tear" src="img/tear2.svg">
+ -->		
 
+				<div class="logo">
+					<svg class="tear" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 220 300" enable-background="new 0 0 220 300" xml:space="preserve">
+						<path fill="#FFFFFF" d="M110.7,150.1"/>
+						<g>
+							<defs>
+								<path id="SVGID_4_" d="M110.7,293.2c26,0.3,57.9-8.3,79.4-39.8c36.4-53.3,6.1-97.9-3.1-113.2C177.8,124.8,110.7,7,110.7,7h0
+									C21,164.5,21.3,161.9,34.4,140.2c-9.2,15.4-39.4,59.9-3.1,113.2C52.8,284.9,84.7,293.5,110.7,293.2L110.7,293.2z"/>
+							</defs>
+							<use xlink:href="#SVGID_4_"  overflow="visible" fill="white"/>
+							<clipPath id="SVGID_1_">
+								<use xlink:href="#SVGID_4_"  overflow="visible"/>
+							</clipPath>
+						</g>
+					</svg>
+					<img src="img/sadtweetslogo_notear.png" width="650" height="110"></img>
 				</div>
 				
 				<div class="middle">
@@ -173,6 +187,16 @@
 		        $('.pause').click(function() {
 		        audioElement.pause();
 		        });
+
+		     	function teardrop() {
+		     		$('.tear')
+		     			.transition({y:'-15px', scale:0 },0)
+		     			.transition({y:'0px', scale:1, delay: 800}, 1000)
+		     			.transition({y:'3000px', delay: 2500}, 4000, 'ease', function() {
+		     				teardrop();
+		     			});
+				};
+		     	teardrop();
 
     	</script>
 
