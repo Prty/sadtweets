@@ -19,7 +19,7 @@ a {
 	padding-top: 80px;back
 }
 
-/*.tear {
+.tear {
 	background-color: white;
 	height: 17px;
 	width: 17px;
@@ -32,37 +32,10 @@ a {
   	border-top-left-radius: 60%;
 	-webkit-transform:rotate(-45deg);
 }
-*/
 
 
 
 
-$n: 64; // number of dots
-$m: 2; // teardrop parameter
-$ur: 5em; // unit size
-$d: .25em; // dot diam
-
-$ua: 360deg/$n; // unit angle
-$sh: (); // init list of box shadows
-
-@for $i from 0 to $n {
-  $ca: $i*$ua; // current angle
-  $x:  $ur*sin($ca)*pow(sin($ca/2), $m);
-  $y: -$ur*cos($ca); // parametric equations
-  $sh: $sh, $x $y hsl($ca/1deg, 100%, 50%); // append current shadow
-}
-
-html { background: black; }
-
-.tear {
-  position: absolute;
-  top: 50%; left: 50%;
-  margin: -$d/2;
-  width: $d; height: $d;
-  border-radius: 50%;
-  box-shadow: $sh;
-  background-color: red;
-}
 
 
 /*
