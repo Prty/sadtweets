@@ -25,11 +25,9 @@
 	if (fullURL.indexOf(LIVEpath) > -1) {
 		parsedURL = fullURL.slice(25);
 		ENVpath = LIVEpath + 'tweets/';
-		alert(parsedURL);
 	} else if (fullURL.indexOf(LOCALpath) > -1) {
 		parsedURL = fullURL.slice(22);
 		ENVpath = LOCALpath + 'tweets/';
-		alert(parsedURL);
 	}
 
 	var methods = {
@@ -77,17 +75,15 @@
 
 			if (context === 'input') {
 				$('.intro-wrapper').fadeOut(function () {
-					$('.user').fadeIn(function () {
-						$(this).fadeOut(function () {
-							methods.fadeFunction(firstTweet);
-						});
-					});
+					methods.fadeFunction(firstTweet);
 				});
 			} else if (context === 'url') {
 				$('.user').fadeIn(function () {
-					$(this).fadeOut(function () {
-						methods.fadeFunction(firstTweet);
-					});
+					setTimeout(function () {
+						$(this).fadeOut(function () {
+							methods.fadeFunction(firstTweet);
+						});
+					}, 3000);
 				});
 			}
        	},
