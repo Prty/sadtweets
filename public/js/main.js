@@ -69,7 +69,7 @@
 		},
 
 		showSadTweets: function (context) {
-			audioElement.play();	//call audio
+			// audioElement.play();	//call audio
 			$('.footer_tweets').fadeIn(2000); // fadein second footer
 			
 			// retrieve tweets from template in the DOM								
@@ -89,19 +89,22 @@
 					self = this;
 					setTimeout(function () {
 						$(self).fadeOut(function () {
-							methods.fadeFunction(firstTweet);
+						methods.fadeFunction(firstTweet);
 						});
 					}, 3000);
 				});
 			}
-       	},
-       	fadeFunction: function (tweetElement) {
-       		console.log(tweetElement);
-       		shownTweets.push(tweetElementID);
-       		console.log('shownTweets:');
-       		console.log(shownTweets);
-			var tweetElementID = $(tweetElement).children().children()[0].innerHTML;
+		},
+		fadeFunction: function (tweetElement) {
+			var tweetElementID = $(tweetElement).find('.tweet-id').html();
+			// var tweetElementID = $(tweetElement).children().children()[0].innerHTML;
+			shownTweets.push(tweetElementID);
 			sadTweetsLength--;
+
+			console.log(tweetElement);
+
+			console.log('shownTweets:');
+			console.log(shownTweets);
 			console.log('sadTweetsLength: ' + sadTweetsLength);
 			nextRandTweet = methods.getNextRandTweet();
 
