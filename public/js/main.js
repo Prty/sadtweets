@@ -18,23 +18,24 @@
 		shownTweets = [],
 		sadTweetsLength,
 		nextRandTweet,
-		tweets;
+		tweets,
+		twitterhandle;
 
 	// Init App Environment
 	if (fullURL.indexOf(LIVEpath) > -1) {
 		parsedURL = fullURL.slice(25);
-		ENVpath = LIVEpath;
+		ENVpath = LIVEpath + 'tweets/';
 		alert(parsedURL);
 	} else if (fullURL.indexOf(LOCALpath) > -1) {
 		parsedURL = fullURL.slice(22);
-		ENVpath = LOCALpath;
+		ENVpath = LOCALpath + 'tweets/';
 		alert(parsedURL);
 	}
 
 	var methods = {
 		init: function () {
 			console.log('Sad Tweets js init!');
-
+			twitterhandle = $('.ejs-context').html();
 			methods.showIntroSadTweets();
 
 			var source = $('#tweets-template').html();
@@ -43,8 +44,9 @@
 			var source = $('#tweets-share-template').html();
 			tweetsShareTemplate = Handlebars.compile( source );
 
-			if (parsedURL.length > -1) {
-				methods.getSadTweets('url');	
+
+			if (parsedURL.length > 0) {
+				methods.getSadTweets('url', twitterhandle);	
 			}
 
 			// Init getSadTweets input form event handler
@@ -61,7 +63,7 @@
 			});
 		},
 
-		showSadTweets: function () {
+		showSadTweets: function (context) {
 			audioElement.play();	//call audio
 			$('.footer_tweets').fadeIn(2000); // fadein second footer
 			
@@ -73,9 +75,21 @@
 
 			console.log(tweets);
 
-			$('.intro-wrapper').fadeOut(function () {
-				methods.fadeFunction(firstTweet);
-			});
+			if (context === 'input') {
+				$('.intro-wrapper').fadeOut(function () {
+					$('.user').fadeIn(function () {
+						$(this).fadeOut(function () {
+							methods.fadeFunction(firstTweet);
+						});
+					});
+				});
+			} else if (context === 'url') {
+				$('.user').fadeIn(function () {
+					$(this).fadeOut(function () {
+						methods.fadeFunction(firstTweet);
+					});
+				});
+			}
        	},
        	fadeFunction: function (tweetElement) {
        		console.log(tweetElement);
@@ -118,10 +132,15 @@
 				console.log('WTF!!!');
 			}
 		},
-		getSadTweets: function (context) {
-			alert('getSadTweets!');
+		getSadTweets: function (context, twitterhandle_url) {
+			console.log('getSadTweets: ' + context + ' ' + twitterhandle_url);
+
+			////////////////////////
+			// DEFINE AJAX PARAMS //
+			////////////////////////
+
 			var params = {
-				url: ENVpath + twitterhandle,
+				url: '',
 				dataType: 'json',
 				success: function (data) {
 					alert('sucess from getSadTweets!');
@@ -131,9 +150,9 @@
 					if (dataLength) {
 						// history.pushState(null, null, twitterhandle);
 
-						///////////////////////////////
-						// HANDLE BAR SUCESS ACTIONS //
-						///////////////////////////////
+						////////////////////////////////
+						// HANDLE BAR SUCCESS ACTIONS //
+						////////////////////////////////
 
 						tweetContainer = $('.tweets-container');
 						tweetContainer.empty();
@@ -159,7 +178,7 @@
 						});
 
 						history.pushState(null, null, twitterhandle);
-						methods.showSadTweets();
+						methods.showSadTweets(context);
 						// 	console.log(html);
 							
 						// } // end of for loop
@@ -171,23 +190,30 @@
 				} // end of success
 			}// end of params
 
+			/////////////////////////////////
+			// DEFINE CONTEXT OF AJAX CALL //
+			/////////////////////////////////
+
 			if (context === 'url') {
-				params.url = ENVpath + parsedURL
+				params.url = ENVpath + twitterhandle_url
 				var html = tweetsShareTemplate(parsedURL);
 
 			} else if (context === 'input') {
-	
 				// fetch data from input form
 				var raw_twitterhandle = $('.twitter-form-input').val();
 				var twitterhandle = raw_twitterhandle.substr(1);
-				console.log(twitterhandle);
 				params.url = ENVpath + twitterhandle
 				
 				var html = tweetsShareTemplate(parsedURL);
-
 				tweetShareContainer = $('.tweets-share-container');
 				tweetShareContainer.append(html);
 			}// enf of if statement
+
+
+			///////////////
+			// AJAX CALL //
+			///////////////
+
 			$.ajax(params);
 		} // end of getSadTweets
 	}// end of method

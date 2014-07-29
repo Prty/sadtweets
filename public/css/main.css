@@ -190,17 +190,6 @@ input:focus, textarea:focus {
 	border-radius: 7px; /* future proofing */
 	-khtml-border-radius: 7px; /* for old Konqueror browsers */
 }
-
-/*.circle {
-	width: 18px;
-	height: 30px;
-	background-color: #fafafa;
-	margin: 0 auto;
-	-moz-border-radius: 50%;
-	-webkit-border-radius: 50%;
-	border-radius: 50%;
-	-khtml-border-radius: 50%; 
-}*/
 .name {
 	font-size: 17px;
 	letter-spacing: 1px;
@@ -409,10 +398,15 @@ input:focus, textarea:focus {
 	color: #00aeef;
 }
 
-/*.tweets-share-container {
-	border-bottom: 1px solid;
+/*				*/
+/*	EJS CONTEXT	*/
+/*				*/
+
+.ejs-context {
+	display: none;
 }
-*/
+
+
 
 
 
