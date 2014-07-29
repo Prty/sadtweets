@@ -147,7 +147,6 @@
 				url: '',
 				dataType: 'json',
 				success: function (data) {
-					alert('sucess from getSadTweets!');
 					console.log(data);
 					var dataLength = Object.size(data);
 
