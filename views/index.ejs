@@ -1,23 +1,81 @@
 <!DOCTYPE/>
 <html>
 <head>
+	<meta charset="utf-8">
 	<title>Sad Tweets</title>
+	<link rel="icon" href="http://tomgalle.com/favicons/sadtweets.ico">
+
+	<meta name="description" content="Discover the saddest, most lonely tweets you ever tweeted."/>
+	<meta name="abstract" content="Discover the saddest, most lonely tweets you ever tweeted."/>
+	<meta name="Keywords" content="Sad Tweets, Twitter, PARTY New York, Design, Art, Netart, Lonely Tweet, Sad, Depressing, No RT, No Fav, Art404, Tom Galle">
+	<meta http-equiv="Content-Language" content="EN"/>
+	<meta name="author" content="Party New York"/>
+	<meta name="distribution" content="Global"/>
+
+	<meta property="og:title" content="Sad Tweets">
+	<meta property="og:url" content="http://sadtweets.com">
+	<meta property="og:site_name" content="Sad Tweets">
+	<meta property="og:description" content="Discover the saddest, most lonely tweets you ever tweeted.">
+	<meta property="og:image" content="http://www.tomgalle.com/thumbnails/sadtweets.png" />
+
+	<!-- STYLING -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css"> 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
+
+
 <body>
-	<article>
-		<h1>Sad Tweets</h1>
-	</article>
 
-	<form>
-		<input type="text" class="twitter-form-input"/>
-		<input type="submit" class="get-sadtweets-button" value="Get Sad Tweets"/>
-	</form>
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=329962340406576&version=v2.0";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));</script>
 
-	<h2>
+
+	<!-- TWEETS CONTAINER -->
+	<div class="tweets-container"></div>
+
+	<!-- FOOTER TWEETS -->
+	<div class="footer_tweets">
+		<a class="onlybird2" href="index.html"><img src="img/onlybird.png" width="35" height="29"></img></a>
+		<div class="shareyourtweets">
+	    	<a class="tweets-share-container"></a>
+	    	<a class="tweets-share-container-facebook">Share on Facebook</a>
+	    	<a class="tweets-share-container-link">Copy Link</a>
+	    </div>
+	</div>
+
+	<!-- NO MORE TWEETS -->
+	<div class="fin">
+	    No More Sad Tweets
+	    <div class="endwrap">
+	        <a href="#" class="end endfacebook">Share on Facebook</a>
+	        <a href="#" class="end endtwitter">Share on Twitter</a> 
+	        <a href="/" class="end back">Back</a>    
+	    </div>
+	</div>
+
+	<!-- NO SAD TWEETS -->
+	<div class="page notweets">
+	    <div class="pagetitle">No Sad Tweets Found</div>
+		<div class="pagetext">None of your tweets are sad, <br> all of them are retweeted or favorited!</div>
+	    <a class="pagelink" href="index.html">Try Someone Else</div>
+	</div>
+
+	<!-- USER INTRO -->
+	<div class="page user">
+    	<div class="pagetitle">You are about to see <a class="pageuser" href="#">@tomgalle's</a> saddest, most lonely tweets.</div>
+    	<!-- <a class="pagelink" href="index.html">Discover Yours</a> -->
+	</div>
+
+	<!-- <h2>
 		Sad Tweets for
 		<p><%= username %></p>
-	</h2>
+	</h2> -->
 
 	<!--		   -->
 	<!-- TEMPLATES -->
@@ -25,32 +83,37 @@
 
 	<!-- Record detail template. -->
 	<script id="tweets-template" type="text/x-handlebars-template">
-		<div class="tweets-wrapper">
-			<div class="profile-wrapper">
-				<div class="image-wrapper">
-					<img src="{{profile_image}}"/>
-				</div>
-				<span>ID; {{id}}</span>
-				<span>Link: {{link}}</span>
-				<span>{{screenname}}</span>
-			</div>
+		<div class="tweet">  
+			<a target="_blank" href="{{link}}">
+				<div class="tweet-id">{{id}}</div>  
+				<div class="title">{{relative_created_at}} without RT or Favorite... </div>    
+				<div class="frame">
+					<div class="profile"> 
+						<div class="profilepic">
+							<img class="profilepic" src="{{profile_image}}"/>
+						</div>
+						<div class="name">{{username}}</div>
+						<div class="handle">@{{screenname}}</div>
+					</div> <!-- profile -->
 
-			<div class="tweet-text">
-				{{text}}
-			</div>
+					<div class="tweettext">{{text}}</div>
+					<div class="line"></div>
 
-			<div class="tweet-stats">
-				<div class="stat-section stat-1">
-					<p>Favorite</p>
-					<span>{{favorite_count}}</span>
-				</div>
+					<div class="tweetbottom">
+						<div class="fav sub">Favorite {{favorite_count}}</div>
+						<div class="rt sub">Retweet {{retweet_count}}</div>
+					</div> <!-- tweetbottom -->
 
-				<div class="stat-section stat-2">
-					<p>Retweet</p>
-					<span>{{retweet_count}}</span>
-				</div>
-			</div> 
+					<div class="line2"></div>
+					<div class="date">{{format_created_at}}
+				</div>  <!-- frame -->
+			</a>
 		</div>
+	</script>
+
+	<!-- Tweets Share Template -->
+	<script id="tweets-share-template" type="text/x-handlebars-template">
+		<a href="https://twitter.com/share" target="_blank" class="twitter-share-button" data-url="http://sadtweets.com/{{username}}" data-via="prty_ny" data-hashtags="sadtweets">Share on Twitter</a>
 	</script>
 
 	<div class="tweets-container">
@@ -59,10 +122,35 @@
 	<!-- JAVASCRIPT -->
 	<script type="text/javascript" src="js/libs/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="js/libs/handlebars.js"></script>
+	<script type="text/javascript" src="js/libs/jquery.transit.min.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 
 	<script type="text/javascript">
 		window.SadTweets.init();
+
+		// music
+		audioElement = document.createElement('audio');
+		audioElement.setAttribute('src', 'http://tomgalle.com/assets/sadmusic2.mp3');
+		audioElement.setAttribute('loop', 'loop');
+
+		$.get();
+		audioElement.addEventListener("load", function() {
+		})
+		$('.pause').click(function() {
+		audioElement.pause();
+		});
+	</script>
+
+	<!-- ANALYTICS -->
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-51037216-2', 'auto');
+	  ga('send', 'pageview');
+
 	</script>
 </body>
 </html>

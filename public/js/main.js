@@ -8,13 +8,39 @@
 		return size;
 	};
 
+	// Init Variables
 	var fullURL   = document.URL,
-		parsedURL = fullURL.slice(23),
+		parsedURL,
 		tweetsTemplate,
 		shownTweets = [],
 		sadTweetsLength,
 		nextRandTweet,
 		tweets;
+
+	//Parse URL based on what environment the code is running
+	switch (fullURL) {
+		case 'http://www.sadtweets.com/':
+			alert(fullURL);
+			parsedURL = fullURL.slice(23);
+			alert(parsedURL);
+			break;
+		case 'http://sadtweets.com/':
+			alert(fullURL);
+			parsedURL = fullURL.slice(23);
+			alert(parsedURL);
+			break;
+		case 'http://localhost:3000/':
+			alert(fullURL);
+			parsedURL = fullURL.slice(23);
+			alert(parsedURL);
+			break;
+		default:
+			alert(fullURL);
+			alert('other ENV')
+			break;
+	}
+
+		
 
 
 	var methods = {
