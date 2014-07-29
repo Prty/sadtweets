@@ -20,6 +20,7 @@
 		nextRandTweet,
 		tweets;
 
+	// Init App Environment
 	if (fullURL.indexOf(LIVEpath) > -1) {
 		parsedURL = fullURL.slice(25);
 		ENVpath = LIVEpath;
@@ -29,24 +30,6 @@
 		ENVpath = LOCALpath;
 		alert(parsedURL);
 	}
-
-	//Parse URL based on what environment the code is running
-	// switch (fullURL) {
-	// 	case 'http://www.sadtweets.com/':
-	// 		alert(fullURL);
-	// 		parsedURL = fullURL.slice(25);
-	// 		alert(parsedURL);
-	// 		break;
-	// 	case 'http://localhost:3000/':
-	// 		alert(fullURL);
-	// 		parsedURL = fullURL.slice(21);
-	// 		alert(parsedURL);
-	// 		break;
-	// 	default:
-	// 		alert(fullURL);
-	// 		alert('other ENV')
-	// 		break;
-	// }
 
 	var methods = {
 		init: function () {
@@ -136,11 +119,12 @@
 			}
 		},
 		getSadTweets: function (context) {
-			
+			alert('getSadTweets!');
 			var params = {
 				url: ENVpath + twitterhandle,
 				dataType: 'json',
 				success: function (data) {
+					alert('sucess from getSadTweets!');
 					console.log(data);
 					var dataLength = Object.size(data);
 
@@ -189,8 +173,8 @@
 
 			if (context === 'url') {
 				params.url = ENVpath + parsedURL
-
 				var html = tweetsShareTemplate(parsedURL);
+
 			} else if (context === 'input') {
 	
 				// fetch data from input form
