@@ -79,8 +79,9 @@
 				});
 			} else if (context === 'url') {
 				$('.user').fadeIn(function () {
+					self = this;
 					setTimeout(function () {
-						$(this).fadeOut(function () {
+						$(self).fadeOut(function () {
 							methods.fadeFunction(firstTweet);
 						});
 					}, 3000);
