@@ -21,17 +21,17 @@
 	switch (fullURL) {
 		case 'http://www.sadtweets.com/':
 			alert(fullURL);
-			parsedURL = fullURL.slice(23);
+			parsedURL = fullURL.slice(24);
 			alert(parsedURL);
 			break;
 		case 'http://sadtweets.com/':
 			alert(fullURL);
-			parsedURL = fullURL.slice(23);
+			parsedURL = fullURL.slice(20);
 			alert(parsedURL);
 			break;
 		case 'http://localhost:3000/':
 			alert(fullURL);
-			parsedURL = fullURL.slice(23);
+			parsedURL = fullURL.slice(21);
 			alert(parsedURL);
 			break;
 		default:
