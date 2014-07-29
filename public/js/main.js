@@ -17,28 +17,31 @@
 		nextRandTweet,
 		tweets;
 
-	//Parse URL based on what environment the code is running
-	switch (fullURL) {
-		case 'http://www.sadtweets.com/':
-			alert(fullURL);
-			parsedURL = fullURL.slice(25);
-			alert(parsedURL);
-			break;
-		case 'http://sadtweets.com/':
-			alert(fullURL);
-			parsedURL = fullURL.slice(20);
-			alert(parsedURL);
-			break;
-		case 'http://localhost:3000/':
-			alert(fullURL);
-			parsedURL = fullURL.slice(21);
-			alert(parsedURL);
-			break;
-		default:
-			alert(fullURL);
-			alert('other ENV')
-			break;
+	if (fullURL.indexOf('http://www.sadtweets.com/') > -1) {
+		parsedURL = fullURL.slice(25);
+		alert(parsedURL);
+	} else if (fullURL.indexOf('http://localhost:3000/') > -1) {
+		parsedURL = fullURL.slice(22);	
+		alert(parsedURL);
 	}
+
+	//Parse URL based on what environment the code is running
+	// switch (fullURL) {
+	// 	case 'http://www.sadtweets.com/':
+	// 		alert(fullURL);
+	// 		parsedURL = fullURL.slice(25);
+	// 		alert(parsedURL);
+	// 		break;
+	// 	case 'http://localhost:3000/':
+	// 		alert(fullURL);
+	// 		parsedURL = fullURL.slice(21);
+	// 		alert(parsedURL);
+	// 		break;
+	// 	default:
+	// 		alert(fullURL);
+	// 		alert('other ENV')
+	// 		break;
+	// }
 
 	var methods = {
 		init: function () {
