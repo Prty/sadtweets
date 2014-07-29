@@ -21,7 +21,7 @@
 	switch (fullURL) {
 		case 'http://www.sadtweets.com/':
 			alert(fullURL);
-			parsedURL = fullURL.slice(24);
+			parsedURL = fullURL.slice(25);
 			alert(parsedURL);
 			break;
 		case 'http://sadtweets.com/':
@@ -39,9 +39,6 @@
 			alert('other ENV')
 			break;
 	}
-
-		
-
 
 	var methods = {
 		init: function () {
