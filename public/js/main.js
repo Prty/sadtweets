@@ -138,7 +138,7 @@
 		getSadTweets: function (context) {
 			
 			var params = {
-				url: 'http://localhost:3000/tweets/' + twitterhandle,
+				url: ENVpath + twitterhandle,
 				dataType: 'json',
 				success: function (data) {
 					console.log(data);
@@ -188,7 +188,7 @@
 			}// end of params
 
 			if (context === 'url') {
-				params.url = 'http://localhost:3000/tweets/' + parsedURL
+				params.url = ENVpath + parsedURL
 
 				var html = tweetsShareTemplate(parsedURL);
 			} else if (context === 'input') {
@@ -197,7 +197,7 @@
 				var raw_twitterhandle = $('.twitter-form-input').val();
 				var twitterhandle = raw_twitterhandle.substr(1);
 				console.log(twitterhandle);
-				params.url = 'http://localhost:3000/tweets/' + twitterhandle
+				params.url = ENVpath + twitterhandle
 				
 				var html = tweetsShareTemplate(parsedURL);
 
