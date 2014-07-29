@@ -50,7 +50,14 @@
 			// Init getSadTweets input form event handler
 			$('.get-sadtweets-button').on('click', function (e) {
 				e.preventDefault();
-				methods.getSadTweets('input');
+
+				if ($('.twitter-form-input').val().length -1 > 0) {
+					$(this).fadeOut(function () {
+						$('.submit-loading-icon').fadeIn();
+					});
+
+					methods.getSadTweets('input');
+				}
 			});
 		},
 
@@ -194,6 +201,10 @@
 			if (context === 'url') {
 				params.url = ENVpath + twitterhandle_url
 				var html = tweetsShareTemplate(parsedURL);
+
+				var html = tweetsShareTemplate(parsedURL);
+				tweetShareContainer = $('.tweets-share-container');
+				tweetShareContainer.append(html);
 
 			} else if (context === 'input') {
 				// fetch data from input form

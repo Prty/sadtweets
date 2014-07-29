@@ -87,6 +87,10 @@ input:focus, textarea:focus {
    color: #464646;     
 }
 
+.submit-loading-icon {
+	display: none;
+}
+
 
 /*  		*/
 /*  Footer 	*/
