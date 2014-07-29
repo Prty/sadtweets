@@ -11,17 +11,22 @@
 	// Init Variables
 	var fullURL   = document.URL,
 		parsedURL,
+		ENVpath,
+		LOCALpath = 'http://localhost:3000/',
+		LIVEpath = 'http://www.sadtweets.com/',
 		tweetsTemplate,
 		shownTweets = [],
 		sadTweetsLength,
 		nextRandTweet,
 		tweets;
 
-	if (fullURL.indexOf('http://www.sadtweets.com/') > -1) {
+	if (fullURL.indexOf(LIVEpath) > -1) {
 		parsedURL = fullURL.slice(25);
+		ENVpath = LIVEpath;
 		alert(parsedURL);
-	} else if (fullURL.indexOf('http://localhost:3000/') > -1) {
-		parsedURL = fullURL.slice(22);	
+	} else if (fullURL.indexOf(LOCALpath) > -1) {
+		parsedURL = fullURL.slice(22);
+		ENVpath = LOCALpath;
 		alert(parsedURL);
 	}
 
