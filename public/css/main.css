@@ -17,7 +17,7 @@ a {
 	width: 650px;
 	height: 110px;
 	margin: 0 auto;
-	padding-top: 70px;
+	padding-top: 60px;
 }
 
 .tear {
@@ -31,7 +31,7 @@ a {
 
 .middle {
 	text-align: center;
-	padding-top: 56px;
+	padding-top: 60px;
 	font-style: italic;
 	font-size: 48px;
 	color: #464646;
@@ -49,7 +49,7 @@ a {
 	font-family: "Times New Roman",Georgia,Serif;
 	font-style: italic;
 	width: 305px;
-	height: 54px;
+	height: 50px;
 	font-size: 29px;
 	margin-top: 60px;
 	background-color: white;
@@ -62,7 +62,7 @@ a {
 
 .button {
 	width: 215px;
-	height: 61px;
+	height: 57px;
 	font-family: "Times New Roman",Georgia,Serif;
 	font-style: italic;
 	font-size: 29px;
