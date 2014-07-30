@@ -12,6 +12,7 @@ a {
 	margin: 0 auto;
 	display: none;
 }
+
 .logo {
 	width: 650px;
 	height: 110px;
@@ -34,43 +35,49 @@ a {
 	font-style: italic;
 	font-size: 48px;
 	color: #464646;
+	/*background-color: green;*/
 }
 
 .forms {
 	margin: 0 auto;
-	width: 556px;
+	width: 550px;
+	/*background-color: orange;*/
+	height: 350px;
 }
 
 .field {
 	font-family: "Times New Roman",Georgia,Serif;
 	font-style: italic;
-	width: 320px;
-	height: 58px;
+	width: 305px;
+	height: 54px;
 	font-size: 29px;
-	margin-top: 40px;
+	margin-top: 60px;
 	background-color: white;
 	text-align: left;
 	color: #464646;
 	border: 3px solid #00aeef;
 	padding-left: 10px;
+
 }
+
 .button {
-	width: 225px;
-	height: 58px;
+	width: 215px;
+	height: 61px;
 	font-family: "Times New Roman",Georgia,Serif;
 	font-style: italic;
 	font-size: 29px;
 	background-color: #00aeef;
 	margin: 0 auto;
-	margin-top: 60px;
+	margin-top: 61px;
 	color: white;
 	text-align: center;
 	position: relative;
 	bottom: 1px;
 	border : 0px;
 	cursor: pointer;
-	margin-left: 6px;
+	float: right;
 }
+
 input:focus, textarea:focus {
     outline: none;
 }
@@ -97,7 +104,7 @@ input:focus, textarea:focus {
 /*			*/
 
 
-.Footer {
+.footer {
 	width: 385px;
 	height: 25px;
 	position: absolute;
@@ -106,7 +113,9 @@ input:focus, textarea:focus {
 	margin-right: auto;
 	left: 0;
 	right: 0;
+	/*background-color: lime;*/
 }
+
 
 .sharebuttons {
 	width: 168px;
@@ -116,7 +125,6 @@ input:focus, textarea:focus {
 .tweetshare {
 	float: left;
 	position: absolute;
-	bottom: 5px;
 }
 
 .likeshare {
@@ -127,9 +135,8 @@ input:focus, textarea:focus {
 	font-size: 12px;
 	font-style: italic;
 	color: #BDBDBD;
-
 	position: relative;
-	bottom: 20px;
+	bottom: 23px;
 	float: right;
 }
 
@@ -137,7 +144,6 @@ input:focus, textarea:focus {
 	color: #BDBDBD;
 	text-decoration: none;
 }
-
 
 
 /* 			*/
@@ -154,6 +160,7 @@ input:focus, textarea:focus {
 .tweet-id {
 	display: none;
 }
+
 .frame {
 	width: 650px;
 	background-color: white;
@@ -177,9 +184,14 @@ input:focus, textarea:focus {
 
 }
 .profile {
-	margin: 40 40 22 40; /* boven rechts onder links */
+	/*margin: 40 40 22 40;*/
+	margin-top: 40px;
+	margin-right: 40px;
+	margin-bottom: 22px;
+	margin-left: 40px;
 	height: 52px;
-	width: 200px;
+	width: 440px;
+	/*background-color: lime;*/
 }
 
 .profilepic {
@@ -194,22 +206,24 @@ input:focus, textarea:focus {
 	border-radius: 7px; /* future proofing */
 	-khtml-border-radius: 7px; /* for old Konqueror browsers */
 }
+
 .name {
 	font-size: 17px;
-	letter-spacing: 1px;
 	font-weight: bold;
 	text-align: left;
 	line-height: 25px;
-	display: inline;
+	display: block;
 	float: left;
 	margin-left: 12px;
 	margin-top: 4px;
 	color: #353535;
+	/*background-color: red;*/
+	width: 350px;
 }
 .handle {
 	float: left;
 	text-align: left;
-	display: inline;
+	display: inline-block;
 	float: left;
 	margin-left: 12px;
 	color: #9d9d9d;
@@ -328,9 +342,10 @@ input:focus, textarea:focus {
 
 
 .pagetitle {
-	font-size: 50px;
+	font-size: 54px;
 	color: #00aeef;
 	margin-bottom: 40px;
+	margin-top: 50px;
 }
 
 .pagetitle a {
@@ -373,6 +388,7 @@ input:focus, textarea:focus {
 	font-style: italic;
 	color: #9d9d9d;
 	font-size: 17px;
+	text-align: center;
 }
 
 .onlybird2 {
@@ -382,18 +398,20 @@ input:focus, textarea:focus {
 }
 
 .shareyourtweets {
-	list-style: none;
-	width: 370px;
+	/*list-style: none;*/
+	width: 380px;
 	height: 20px;
 	margin: 0 auto;
 	position: fixed;
 	bottom: 15px;
 	left: 0;
 	right: 0;
+	/*background-color: red;*/
 }
 
 .shareyourtweets a {
-	padding: 0 4 0 4;
+	padding-left: 4px;
+	padding-right: 4px;
 	color: #9d9d9d;
 	cursor: pointer;
 }

@@ -1,5 +1,5 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/Users/moises404/local/bin/npm', 'start' ]
+1 verbose cli [ 'node', '/Users/admin/local/bin/npm', 'start' ]
 2 info using npm@1.4.20
 3 info using node@v0.10.29
 4 verbose run-script [ 'prestart', 'start', 'poststart' ]
@@ -18,8 +18,8 @@
 10 error     npm owner ls tweetsapp
 10 error There is likely additional logging output above.
 11 error System Darwin 13.3.0
-12 error command "node" "/Users/moises404/local/bin/npm" "start"
-13 error cwd /Users/moises404/Dropbox/Moises/Client/Party/Party_Projects/SadTweets-app
+12 error command "node" "/Users/admin/local/bin/npm" "start"
+13 error cwd /Users/admin/Dropbox/Work/Sad Tweets/sadtweets
 14 error node -v v0.10.29
 15 error npm -v 1.4.20
 16 error code ELIFECYCLE
