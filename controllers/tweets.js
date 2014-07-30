@@ -101,6 +101,8 @@ exports.show = function(req, res) {
 			}	
 		}
 
+		currentLastTweetID = returnedData[returnedData.length - 1].id_str;
+
 		if (currentLastTweetID === undefined) {
 			res.json(returnedDataObject);
 		} else {
@@ -144,6 +146,8 @@ exports.show = function(req, res) {
 					currentLastTweetID = tweet.id;	
 				}
 			}
+
+			currentLastTweetID = returnedData[returnedData.length - 1].id_str;
 
 			// returnedData[returnedData.length];
 
