@@ -95,8 +95,14 @@ input:focus, textarea:focus {
 }
 
 .submit-loading-icon {
+
 	display: none;
+	padding-left: 85px;
+	position: relative;
+	top: 11px;
+	
 }
+
 
 
 /*  		*/
