@@ -24,49 +24,115 @@ var T = new Twit({
 // TWEETS CONTROLLER //
 ///////////////////////
 
+
+
 exports.show = function(req, res) {
 	console.log(req.params.username);
 	var returnedData,
 		returnedDataObject = {},
-		currentLastTweetID;
+		currentLastTweetID,
+		tweet = {};
+
+	// T.get('statuses/user_timeline', { screen_name: req.params.username, count: 200 },  function (err, data, response) {
+	// 	returnedData = data;
+	// 	//	
+	// 	//	loop through returned data and create object to push to array
+	// 	//	
+	// 	for (var i = 0; i < returnedData.length; i++) {
+	// 		if (returnedData[i].retweet_count === 0 && returnedData[i].favorite_count === 0 && returnedData[i].in_reply_to_status_id === null && returnedData[i].entities.user_mentions.length === 0) {
+	// 			tweet = {
+	// 				id: returnedData[i].id_str,
+	// 				text: returnedData[i].text,
+	// 				source: returnedData[i].source,
+	// 				twitter_source_link: 'https://twitter.com/' + returnedData[i].user.screen_name + '/status/' + returnedData[i].id_str,
+	// 				retweet_count: returnedData[i].retweet_count,
+	// 				favorite_count: returnedData[i].favorite_count,
+	// 				retweeted: returnedData[i].favorited,
+	// 				favorited: returnedData[i].retweeted,
+	// 				in_reply: returnedData[i].in_reply_to_status_id,
+	// 				user_mentions: returnedData[i].entities.user_mentions,
+	// 				user_id: returnedData[i].user.id,
+	// 				username: returnedData[i].user.name,
+	// 				screenname: returnedData[i].user.screen_name,
+	// 				profile_background: returnedData[i].user.profile_background_image_url,
+	// 				profile_image: returnedData[i].user.profile_image_url,
+	// 				created_at: returnedData[i].created_at,
+	// 				relative_created_at: moment(returnedData[i].created_at).fromNow(true),
+	// 				format_created_at: parseTwitterDate(returnedData[i].created_at)
+	// 			};
+	// 			returnedDataObject[tweet.id] = tweet;
+	// 			currentLastTweetID = tweet.id;
+	// 		}	
+	// 	}
+	// });
+
+
+	// T.get('statuses/user_timeline', { screen_name: req.params.username, count: 200 },  function (err, data, response) {
+	// 	returnedData = data;
+	// 	//	
+	// 	//	loop through returned data and create object to push to array
+	// 	//	
+	// 		for (var i = 0; i < returnedData.length; i++) {
+	// 			if (returnedData[i].retweet_count === 0 && returnedData[i].favorite_count === 0 && returnedData[i].in_reply_to_status_id === null && returnedData[i].entities.user_mentions.length === 0) {
+	// 			tweet = {
+	// 				id: returnedData[i].id_str,
+	// 				text: returnedData[i].text,
+	// 				source: returnedData[i].source,
+	// 				twitter_source_link: 'https://twitter.com/' + returnedData[i].user.screen_name + '/status/' + returnedData[i].id_str,
+	// 				retweet_count: returnedData[i].retweet_count,
+	// 				favorite_count: returnedData[i].favorite_count,
+	// 				retweeted: returnedData[i].favorited,
+	// 				favorited: returnedData[i].retweeted,
+	// 				in_reply: returnedData[i].in_reply_to_status_id,
+	// 				user_mentions: returnedData[i].entities.user_mentions,
+	// 				user_id: returnedData[i].user.id,
+	// 				username: returnedData[i].user.name,
+	// 				screenname: returnedData[i].user.screen_name,
+	// 				profile_background: returnedData[i].user.profile_background_image_url,
+	// 				profile_image: returnedData[i].user.profile_image_url,
+	// 				created_at: returnedData[i].created_at,
+	// 				relative_created_at: moment(returnedData[i].created_at).fromNow(true),
+	// 				format_created_at: parseTwitterDate(returnedData[i].created_at)
+	// 			};
+	// 			returnedDataObject[tweet.id] = tweet;
+	// 			currentLastTweetID = tweet.id;
+	// 		}	
+	// 	}
+	// });
 
 	T.get('statuses/user_timeline', { screen_name: req.params.username, count: 200 },  function (err, data, response) {
 		returnedData = data;
-
 		//	
 		//	loop through returned data and create object to push to array
 		//	
 		for (var i = 0; i < returnedData.length; i++) {
 			if (returnedData[i].retweet_count === 0 && returnedData[i].favorite_count === 0 && returnedData[i].in_reply_to_status_id === null && returnedData[i].entities.user_mentions.length === 0) {
-
-			var tweet = {
-				id: returnedData[i].id_str,
-				text: returnedData[i].text,
-				source: returnedData[i].source,
-				twitter_source_link: 'https://twitter.com/' + returnedData[i].user.screen_name + '/status/' + returnedData[i].id_str,
-				retweet_count: returnedData[i].retweet_count,
-				favorite_count: returnedData[i].favorite_count,
-				retweeted: returnedData[i].favorited,
-				favorited: returnedData[i].retweeted,
-				in_reply: returnedData[i].in_reply_to_status_id,
-				user_mentions: returnedData[i].entities.user_mentions,
-				user_id: returnedData[i].user.id,
-				username: returnedData[i].user.name,
-				screenname: returnedData[i].user.screen_name,
-				profile_background: returnedData[i].user.profile_background_image_url,
-				profile_image: returnedData[i].user.profile_image_url,
-				created_at: returnedData[i].created_at,
-				relative_created_at: moment(returnedData[i].created_at).fromNow(true),
-				format_created_at: parseTwitterDate(returnedData[i].created_at)
-			};
-			returnedDataObject[tweet.id] = tweet;
-			var currentLastTweetID = tweet.id;
-		}	
-	}
+				tweet = {
+					id: returnedData[i].id_str,
+					text: returnedData[i].text,
+					source: returnedData[i].source,
+					twitter_source_link: 'https://twitter.com/' + returnedData[i].user.screen_name + '/status/' + returnedData[i].id_str,
+					retweet_count: returnedData[i].retweet_count,
+					favorite_count: returnedData[i].favorite_count,
+					retweeted: returnedData[i].favorited,
+					favorited: returnedData[i].retweeted,
+					in_reply: returnedData[i].in_reply_to_status_id,
+					user_mentions: returnedData[i].entities.user_mentions,
+					user_id: returnedData[i].user.id,
+					username: returnedData[i].user.name,
+					screenname: returnedData[i].user.screen_name,
+					profile_background: returnedData[i].user.profile_background_image_url,
+					profile_image: returnedData[i].user.profile_image_url,
+					created_at: returnedData[i].created_at,
+					relative_created_at: moment(returnedData[i].created_at).fromNow(true),
+					format_created_at: parseTwitterDate(returnedData[i].created_at)
+				};
+				returnedDataObject[tweet.id] = tweet;
+				currentLastTweetID = tweet.id;
+			}	
+		}
 		console.log('currentLastTweetID: ' + currentLastTweetID);
 		res.json(returnedDataObject);
-		// res.json(data);
-		// res.redirect('index.html');
 	});
 
 

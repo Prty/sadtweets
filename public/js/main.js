@@ -70,7 +70,7 @@
 		},
 
 		showSadTweets: function (context) {
-			audioElement.play();	//call audio
+			// audioElement.play();	//call audio
 			$('.footer_tweets').fadeIn(2000); // fadein second footer
 			
 			// retrieve tweets from template in the DOM								
