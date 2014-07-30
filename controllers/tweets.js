@@ -145,6 +145,8 @@ exports.show = function(req, res) {
 				}
 			}
 
+			// returnedData[returnedData.length];
+
 			console.log('currentLastTweetID: ' + currentLastTweetID);
 			if (currentLastTweetID === undefined) {
 				res.json(returnedDataObject);
@@ -156,9 +158,6 @@ exports.show = function(req, res) {
 			}
 		});
 	}
-
-	console.log('First Twitter Request!');
-
 
 	function parseTwitterDate(text) {
 		//running regex to grab everything after the time
