@@ -1,5 +1,5 @@
 body {
-	background: white;
+	/*background: white;*/
 	font-family: "Times New Roman",Georgia,Serif;
 }
 
@@ -17,7 +17,7 @@ a {
 	width: 650px;
 	height: 110px;
 	margin: 0 auto;
-	padding-top: 80px;
+	padding-top: 70px;
 }
 
 .tear {
@@ -31,7 +31,7 @@ a {
 
 .middle {
 	text-align: center;
-	padding-top: 45px;
+	padding-top: 56px;
 	font-style: italic;
 	font-size: 48px;
 	color: #464646;
@@ -437,8 +437,14 @@ input:focus, textarea:focus {
 
 
 .gray {
-	background-color: #ededed;
-
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #f2f2f2;
+	z-index: -100;
 }
 
 
