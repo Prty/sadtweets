@@ -74,7 +74,7 @@ exports.show = function(req, res) {
 		//	
 		//	loop through returned data and create object to push to array
 		//
-		if (returnData) {
+		if (returnedData) {
 			for (var i = 0; i < returnedData.length; i++) {
 				if (returnedData[i].retweet_count === 0 && returnedData[i].favorite_count === 0 && returnedData[i].in_reply_to_status_id === null && returnedData[i].entities.user_mentions.length === 0) {
 					tweet = {
@@ -123,7 +123,7 @@ exports.show = function(req, res) {
 			//	loop through returned data and create object to push to array
 			//
 
-			if (returnData) {
+			if (returnedData) {
 				for (var i = 0; i < returnedData.length; i++) {
 					if (returnedData[i].retweet_count === 0 && returnedData[i].favorite_count === 0 && returnedData[i].in_reply_to_status_id === null && returnedData[i].entities.user_mentions.length === 0) {
 						tweet = {
