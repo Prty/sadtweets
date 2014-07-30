@@ -63,7 +63,7 @@
 		},
 
 		showIntroSadTweets: function(){
-			$( '.wrapper' ).fadeIn(2000);
+			// $( '.wrapper' ).fadeIn(2000);
 			$( '.field' ).on( 'click', function() {
 				$('.field').val('@');
 			});
