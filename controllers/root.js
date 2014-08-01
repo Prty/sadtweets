@@ -4,7 +4,7 @@
 
 exports.index = function(req, res) {
 	console.log('Redirecting -> RootController.index');
-	res.redirect('/');
+	res.redirect('/search');
 };
 
 exports.show = function(req, res) {
@@ -12,5 +12,9 @@ exports.show = function(req, res) {
 	res.render('index', { username: req.params.username });
 	// console.log(req)
 	// res.render('index');
-
 };
+
+exports.search = function (req, res) {
+	console.log(req.user)
+	res.redirect('/' + req.user.twitter.username);
+}

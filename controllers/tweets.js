@@ -2,12 +2,16 @@
 // REQUIRE //
 /////////////
 console.log('tweets.js!');
+
 var express = require('express'),
 	router  = express.Router(),
 	util    = require('util'),
+	moment = require('moment'),
 	Twit    = require('twit'),
-	TwitterStrategy = require('passport-twitter').Strategy,
-	moment = require('moment');
+	TwitterStrategy = require('passport-twitter').Strategy;
+	
+
+var configAuth = require('../config/auth');
 
 var TWITTER_CONSUMER_KEY    = 'PKhzF4Ww6DqbqribSUxQGn5VG';
 var TWITTER_CONSUMER_SECRET = 'aQuQHE827XmXmw4gz3NjXTB44LJ4o60gFhkBiB9S9eny2TJH4A';
@@ -27,6 +31,16 @@ var T = new Twit({
 
 
 exports.show = function(req, res) {
+	console.log('req.user.twitter.username: ' + req.user.twitter.username)
+
+	var T = new Twit({
+		consumer_key:         TWITTER_CONSUMER_KEY
+	,	consumer_secret:      TWITTER_CONSUMER_SECRET
+	,	access_token:         req.user.twitter.token
+	,	access_token_secret:  'PKyIEecr8mLOOIVZ2mQfh3lw1kr1EWfTOA5HTpOWttzxw'
+	});
+
+
 	console.log(req.params.username);
 	console.log('First Twitter Request!');
 	var returnedData,
@@ -125,7 +139,7 @@ exports.show = function(req, res) {
 			console.log('currentLastTweetID: ' + currentLastTweetID);
 			if (currentLastTweetID === undefined) {
 				res.json(returnedDataObject);
-			} else if (requestCount === 2) {
+			} else if (requestCount === 3) {
 				res.json(returnedDataObject);
 			} else {
 				requestCount++;

@@ -1,25 +1,28 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
-			<meta charset="UTF-8">
-			<title>Sad Tweets</title>
-			<link rel="icon" href="http://tomgalle.com/favicons/sadtweets.ico">
 
-			<meta name="description" content="Discover the saddest, most lonely tweets you ever tweeted."/>
-			<meta name="Keywords" content="Sad Tweets, Twitter, PARTY New York, Design, Art, Netart, Lonely Tweet, 
-			Sad, Depressing, No RT, No Fav, Art404, Tom Galle">
-			<meta name="author" content="Party New York"/>
+		<meta charset="UTF-8">
+		<title>Sad Tweets</title>
+		<link rel="icon" href="http://tomgalle.com/favicons/sadtweets.ico">
 
-			<meta property="og:type" content="website" />
-			<meta property="og:title" content="Sad Tweets" />
-			<meta property="og:site_name" content="Sad Tweets" />
-			<meta property="og:description" content="Discover the saddest, most lonely tweets you ever tweeted." />
-			<meta property="og:url" content="http://sadtweets.com">
-			<meta property="og:image" content="http://www.tomgalle.com/thumbnails/sadtweets.png" />
+		<meta name="description" content="Discover the saddest, most lonely tweets you ever tweeted."/>
+		<meta name="Keywords" content="Sad Tweets, Twitter, PARTY New York, Design, Art, Netart, Lonely Tweet, 
+		Sad, Depressing, No RT, No Fav, Art404, Tom Galle">
+		<meta name="author" content="Party New York"/>
 
-			<!-- STYLING -->
-			<link rel="stylesheet" type="text/css" href="css/normalize.css"> 
-			<link rel="stylesheet" type="text/css" href="css/main.css">
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Sad Tweets" />
+		<meta property="og:site_name" content="Sad Tweets" />
+		<meta property="og:description" content="Discover the saddest, most lonely tweets you ever tweeted." />
+		<meta property="og:url" content="http://sadtweets.com">
+		<meta property="og:image" content="http://www.tomgalle.com/thumbnails/sadtweets.png" />
+
+		<!-- STYLING -->
+		<link rel="stylesheet" type="text/css" href="css/normalize.css"> 
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		
 	</head>
 
 
@@ -34,47 +37,104 @@
 		  fjs.parentNode.insertBefore(js, fjs);
 		}(document, 'script', 'facebook-jssdk'));</script>
 
+			
+		<!-- <div class="page">
+			<div class="pagetitle">We'll be back soon!</div>
+			<div class="pagetext">We're working on a more stable solution to show your sad tweets.<br> In the meantime, check out <a class="pagelink" href="http://superimportanttweet.com/">Super Important Tweet.</a></div>
+		</div> -->	
+
 
 		<div class='gray'></div>
 
-		<!-- TWEETS CONTAINER -->
-		<div class="tweets-container"></div>
+	    <div class="wrapper">
+	    	<div class="intro-wrapper">
+				<div class="logo">
+					<svg class="tear" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"viewBox="0 0 220 300" enable-background="new 0 0 220 300" xml:space="preserve">
+						<path fill="#FFFFFF" d="M110.7,150.1"/>
+						<g>
+							<defs>
+								<path id="SVGID_4_" d="M110.7,293.2c26,0.3,57.9-8.3,79.4-39.8c36.4-53.3,6.1-97.9-3.1-113.2C177.8,124.8,110.7,7,110.7,7h0
+									C21,164.5,21.3,161.9,34.4,140.2c-9.2,15.4-39.4,59.9-3.1,113.2C52.8,284.9,84.7,293.5,110.7,293.2L110.7,293.2z"/>
+							</defs>
+							<use xlink:href="#SVGID_4_"  overflow="visible" fill="white"/>
+							<clipPath id="SVGID_1_">
+								<use xlink:href="#SVGID_4_"  overflow="visible"/>
+							</clipPath>
+						</g>
+					</svg>
+					<img alt="bird" src="img/sadtweetslogo_notear.png" width="650" height="110">
+				</div> <!-- logo -->
+				
+				<div class="middle">
+					<div class="description">Discover the saddest, most lonely tweets you ever tweeted.</div>
+				</div>
 
-		<!-- FOOTER TWEETS -->
-        <div class="footer_tweets">
-        	<a class="onlybird2" href="/"><img alt="sadbird" src="img/onlybird.png" width="35" height="29"></a>
-        	<div class="shareyourtweets">
-	        	<a class="tweets-share-container"></a>
-	        	<a class="tweets-share-container-facebook">Share on Facebook</a>
-	        	<a class="tweets-share-container-link">Copy Link</a>
+				<div class="forms">
+					<form>
+						<input type="text" class="twitter-form-input field" placeholder="Your Twitter Handle">
+						<input type="submit" class="get-sadtweets-button button startmusic" value="Discover Now">
+						<span class="submit-loading-icon"><img alt="loading" src="assets/twitterLoading2.gif"/></span>
+					</form>
+				</div> <!-- forms -->
+				
+				<div class="footer">
+
+					<div class="sharebuttons">
+						<div class="likeshare">
+							<div class="fb-like" data-href="http://sadtweets.com" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+						</div>
+						<div class="tweetshare">
+							<a href="https://twitter.com/share" class="twitter-share-button" data-url="http://sadtweets.com" data-via="prty_ny" data-hashtags="sadtweets">Tweet</a>
+							<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+						</div> 
+					</div> <!-- sharebuttons -->
+
+					<div class="credits">
+			            Made at <a href="http://twitter.com/prty_ny" target="_blank">Party NY</a>, 
+			            by <a href="http://twitter.com/tweetsnotfound" target="_blank"> ART404</a> and <a href="http://twitter.com/tomgalle/" target="_blank">Tom</a>
+	        		</div> <!-- credits -->
+				</div> <!-- footer -->
+
+	        </div> <!-- intro_wrapper -->
+
+			<!-- TWEETS CONTAINER -->
+	        <div class="tweets-container"></div>
+
+			<!-- FOOTER TWEETS -->
+	        <div class="footer_tweets">
+	        	<a class="onlybird2" href="/"><img alt="sadbird" src="img/onlybird.png" width="35" height="29"></a>
+	        	<div class="shareyourtweets">
+		        	<a class="tweets-share-container"></a>
+		        	<a class="tweets-share-container-facebook">Share on Facebook</a>
+		        	<a class="tweets-share-container-link">Copy Link</a>
+		        </div>
 	        </div>
-        </div>
+	        
+	        <!-- NO MORE TWEETS -->
+	        <div class="fin">
+	            No More Sad Tweets
+	            <div class="endwrap">
+	                <a href="#" class="end endfacebook">Share on Facebook</a>
+	                <a href="#" class="end endtwitter">Share on Twitter</a> 
+	                <a href="/" class="end back">Back</a>    
+	            </div>
+	        </div>
 
-		<!-- NO MORE TWEETS -->
-		<div class="fin">
-		    No More Sad Tweets
-		    <div class="endwrap">
-		        <a href="#" class="end endfacebook">Share on Facebook</a>
-		        <a href="#" class="end endtwitter">Share on Twitter</a> 
-		        <a href="/" class="end back">Back</a>    
-		    </div>
-		</div>
+			<!-- NO SAD TWEETS -->
+	       	<div class="page notweets">
+	            <div class="pagetitle">No Sad Tweets Found</div>
+				<div class="pagetext">None of your tweets are sad, <br> all of them are retweeted or favorited!</div>
+	            <a class="pagelink" href="/">Try Someone Else</a>
+	        </div>
 
-		<!-- NO SAD TWEETS -->
-		<div class="page notweets">
-		    <div class="pagetitle">No Sad Tweets Found</div>
-			<div class="pagetext">None of your tweets are sad, <br> all of them are retweeted or favorited!</div>
-		    <a class="pagelink" href="/">Try Someone Else</a>
-		</div>
+	        <!-- USER INTRO -->
+			<div class="page user">
+	    		<div class="pagetitle">You are about to see<a class="pageuser" href="#"> @<%= username %>'s</a> <br> saddest, most lonely tweets.</div>
+			</div>
 
-		<!-- USER INTRO -->
-		<div class="page user">
-	    	<div class="pagetitle">You are about to see<a class="pageuser" href="#"> @<%= username %>'s</a> <br> saddest, most lonely tweets.</div>
-		</div>
+	    </div> <!--wrapper -->
 
-		<!-- EJS URL CONTEXT -->
-		<p class="ejs-context"><%= username %></p>
-
+        
 		<!--		   -->
 		<!-- TEMPLATES -->
 		<!--		   -->
@@ -83,7 +143,7 @@
 		<script id="tweets-template" type="text/x-handlebars-template">
 			<div class="tweet">  
 				<a target="_blank" href="{{link}}">
-					<div class="tweet-id {{id}}">{{id}}</div>  
+					<div class="tweet-id">{{id}}</div>  
 					<div class="title">{{relative_created_at}} without RT or Favorite... </div>    
 					<div class="frame">
 						<div class="profile"> 
@@ -114,9 +174,6 @@
 			<a href="https://twitter.com/share" target="_blank" class="twitter-share-button" data-url="http://sadtweets.com/{{username}}" data-via="prty_ny" data-hashtags="sadtweets">Share on Twitter</a>
 		</script>
 
-		<div class="tweets-container">
-		</div>
-
 		<!-- JAVASCRIPT -->
 		<script type="text/javascript" src="js/libs/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="js/libs/handlebars.js"></script>
@@ -125,31 +182,43 @@
 
 		<script type="text/javascript">
 			window.SadTweets.init();
+      	
+    			// music
+		        audioElement = document.createElement('audio');
+		        audioElement.setAttribute('src', 'http://tomgalle.com/assets/sadmusic6.mp3');
+		        audioElement.setAttribute('loop', 'loop');
 
-			// music
-			audioElement = document.createElement('audio');
-			audioElement.setAttribute('src', 'http://tomgalle.com/assets/sadmusic6.mp3');
-			audioElement.setAttribute('loop', 'loop');
+		        $.get();
+		        audioElement.addEventListener("load", function() {
+		        })
+		        $('.pause').click(function() {
+		        audioElement.pause();
+		        });
 
-			$.get();
-			audioElement.addEventListener("load", function() {
-			})
-			$('.pause').click(function() {
-			audioElement.pause();
-			});
-		</script>
+		        // teardrop animation
+		     	function teardrop() {
+		     		$('.tear')
+		     			.transition({y:'-15px', scale:0 },0)
+		     			.transition({y:'0px', scale:1, delay: 1000}, 850)
+		     			.transition({y:'700px', delay: 3000}, 1200, 'ease', function() {
+		     				teardrop();
+		     			});
+				};
+		     	teardrop();
+
+    	</script>
 
 		<!-- ANALYTICS -->
-		<script>
-			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    	<script>
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-			ga('create', 'UA-51037216-2', 'auto');
-			ga('send', 'pageview');
+		  ga('create', 'UA-51037216-2', 'auto');
+		  ga('send', 'pageview');
+
 		</script>
-	
-	</body>
 
+	</body>
 </html>

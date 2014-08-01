@@ -12,6 +12,7 @@
 	var fullURL   = document.URL,
 		parsedURL,
 		ENVpath,
+		AUTHpath,
 		LOCALpath = 'http://localhost:3000/',
 		LIVEpath = 'http://www.sadtweets.com/',
 		tweetsTemplate,
@@ -25,9 +26,11 @@
 	// Init App Environment
 	if (fullURL.indexOf(LIVEpath) > -1) {
 		parsedURL = fullURL.slice(25);
+		AUTHpath = LIVEpath;
 		ENVpath = LIVEpath + 'tweets/';
 	} else if (fullURL.indexOf(LOCALpath) > -1) {
 		parsedURL = fullURL.slice(22);
+		AUTHpath = LOCALpath;
 		ENVpath = LOCALpath + 'tweets/';
 	}
 
@@ -51,19 +54,27 @@
 			// Init getSadTweets input form event handler
 			$('.get-sadtweets-button').on('click', function (e) {
 				e.preventDefault();
+				console.log('get-sadtweets-button!!');
+				window.location.href = AUTHpath + "auth/twitter";
 
-				if ($('.twitter-form-input').val().length -1 > 0) {
-					$(this).fadeOut(function () {
-						$('.submit-loading-icon').fadeIn();
-					});
 
-					methods.getSadTweets('input');
-				}
+				//////////////////////////
+				//	TWITTER FORM INPUT  //
+				//////////////////////////
+
+
+				// if ($('.twitter-form-input').val().length -1 > 0) {
+				// 	$(this).fadeOut(function () {
+				// 		$('.submit-loading-icon').fadeIn();
+				// 	});
+
+				// 	methods.getSadTweets('input');
+				// }
 			});
 		},
 
 		showIntroSadTweets: function(){
-			// $( '.wrapper' ).fadeIn(2000);
+			$( '.wrapper' ).fadeIn(2000);
 			$( '.field' ).on( 'click', function() {
 				$('.field').val('@');
 			});
