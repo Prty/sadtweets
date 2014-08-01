@@ -32,7 +32,7 @@ var T = new Twit({
 
 exports.show = function(req, res) {
 	console.log('req.user.twitter.username: ' + req.user.twitter.username)
-
+	console.log(req.params.user);
 	var T = new Twit({
 		consumer_key:         TWITTER_CONSUMER_KEY
 	,	consumer_secret:      TWITTER_CONSUMER_SECRET
