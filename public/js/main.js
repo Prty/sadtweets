@@ -49,8 +49,6 @@
 			var source = $('#tweets-share-template').html();
 			tweetsShareTemplate = Handlebars.compile( source );
 
-			$('.user').fadeIn();
-
 			if (parsedURL.length > 0) {
 				methods.getSadTweets('url', twitterhandle);	
 			}
