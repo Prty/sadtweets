@@ -18,6 +18,7 @@
     "morgan": "~1.0.0",
     "passport": "~0.1.17",
     "passport-twitter": "^1.0.2",
+    "pkginfo": "^0.3.0",
     "static-favicon": "~1.0.0",
     "twit": "^1.1.15"
   }
