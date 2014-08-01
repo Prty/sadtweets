@@ -15,6 +15,7 @@ exports.show = function(req, res) {
 };
 
 exports.search = function (req, res) {
-	console.log(req.user)
+	// console.log(req.user)
+	console.log('search: ' + req.user.twitter.username);
 	res.redirect('/' + req.user.twitter.username);
 }
