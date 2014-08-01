@@ -13,7 +13,7 @@ a {
 }
 
 .wrapper {
-	width: 800px;
+	width: 770px;
 	margin: 0 auto;
 	display: none;
 }
@@ -38,7 +38,7 @@ a {
 	text-align: center;
 	padding-top: 60px;
 	font-style: italic;
-	font-size: 48px;
+	font-size: 49px;
 	color: #464646;
 	/*background-color: green;*/
 }
@@ -48,9 +48,10 @@ a {
 	width: 550px;
 	/*background-color: orange;*/
 	height: 350px;
+
 }
 
-.field {
+/*.field {
 	font-family: "Times New Roman",Georgia,Serif;
 	font-style: italic;
 	width: 305px;
@@ -62,26 +63,28 @@ a {
 	color: #464646;
 	border: 3px solid #00aeef;
 	padding-left: 10px;
+	display: none;
 
-}
+}*/
 
 .button {
-	width: 215px;
-	height: 57px;
+	width: 250px;
+	height: 65px;
+	position: fixed;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
 	font-family: "Times New Roman",Georgia,Serif;
 	font-style: italic;
 	font-size: 29px;
 	background-color: #00aeef;
-	margin: 0 auto;
-	margin-top: 61px;
 	color: white;
-	text-align: center;
-	position: relative;
-	bottom: 1px;
 	border : 0px;
 	cursor: pointer;
-	float: right;
+	margin-top: 61px;
 }
+
 
 input:focus, textarea:focus {
     outline: none;
