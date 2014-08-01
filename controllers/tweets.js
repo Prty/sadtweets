@@ -51,7 +51,8 @@ exports.show = function(req, res) {
 
 	T.get('statuses/user_timeline', { screen_name: req.user.twitter.username, count: 200 },  function (err, data, response) {
 		returnedData = data;
-		console.log(returnedData);
+		console.log(err);
+		// console.log(returnedData);
 		//	
 		//	loop through returned data and create object to push to array
 		//
