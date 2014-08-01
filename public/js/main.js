@@ -63,13 +63,13 @@
 				//////////////////////////
 
 
-				// if ($('.twitter-form-input').val().length -1 > 0) {
-				// 	$(this).fadeOut(function () {
-				// 		$('.submit-loading-icon').fadeIn();
-				// 	});
+				if ($('.twitter-form-input').val().length -1 > 0) {
+					$(this).fadeOut(function () {
+						$('.submit-loading-icon').fadeIn();
+					});
 
-				// 	methods.getSadTweets('input');
-				// }
+					methods.getSadTweets('input');
+				}
 			});
 		},
 
@@ -111,7 +111,7 @@
 			}
 		},
 		fadeFunction: function (tweetElement, tweetElementID) {
-			// var tweetElementID = $(tweetElement).find('.tweet-id').html();
+			var tweetElementID = $(tweetElement).find('.tweet-id').html();
 			// var tweetElementID = $(tweetElement).children().children()[0].innerHTML;
 			// alert(tweetElementID);
 			

@@ -41,7 +41,7 @@ exports.show = function(req, res) {
 	});
 
 
-	console.log(req.params.username);
+	// console.log(req.params.username);
 	console.log('First Twitter Request!');
 	var returnedData,
 		returnedDataObject = {},
@@ -49,8 +49,9 @@ exports.show = function(req, res) {
 		tweet = {},
 		requestCount = 0;
 
-	T.get('statuses/user_timeline', { screen_name: req.params.username, count: 200 },  function (err, data, response) {
+	T.get('statuses/user_timeline', { screen_name: req.user.twitter.username, count: 200 },  function (err, data, response) {
 		returnedData = data;
+		console.log(returnedData);
 		//	
 		//	loop through returned data and create object to push to array
 		//
@@ -97,7 +98,7 @@ exports.show = function(req, res) {
 
 	function nextTweetRequest () {
 		console.log('nextTweetRequest!');
-		T.get('statuses/user_timeline', { screen_name: req.params.username, max_id: currentLastTweetID, count: 200 },  function (err, data, response) {
+		T.get('statuses/user_timeline', { screen_name: req.user.twitter.username, max_id: currentLastTweetID, count: 200 },  function (err, data, response) {
 			returnedData = data;
 			//	
 			//	loop through returned data and create object to push to array
