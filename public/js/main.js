@@ -63,13 +63,13 @@
 				//////////////////////////
 
 
-				if ($('.twitter-form-input').val().length -1 > 0) {
-					$(this).fadeOut(function () {
-						$('.submit-loading-icon').fadeIn();
-					});
+				// if ($('.twitter-form-input').val().length -1 > 0) {
+				// 	$(this).fadeOut(function () {
+				// 		$('.submit-loading-icon').fadeIn();
+				// 	});
 
-					methods.getSadTweets('input');
-				}
+				// 	// methods.getSadTweets('input');
+				// }
 			});
 		},
 
