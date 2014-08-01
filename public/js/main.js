@@ -49,6 +49,7 @@
 			var source = $('#tweets-share-template').html();
 			tweetsShareTemplate = Handlebars.compile( source );
 
+			$('.user').fadeIn();
 
 			if (parsedURL.length > 0) {
 				methods.getSadTweets('url', twitterhandle);	
@@ -108,14 +109,14 @@
 					methods.fadeFunction($(firstTweet), firstTweetID);
 				});
 			} else if (context === 'url') {
-				$('.user').fadeIn(function () {
-					self = this;
-					setTimeout(function () {
-						$(self).fadeOut(function () {
+				// $('.user').fadeIn(function () {
+					// self = this;
+					// setTimeout(function () {
+						$('.user').fadeOut(function () {
 						methods.fadeFunction($(firstTweet), firstTweetID);
 						});
-					}, 3000);
-				});
+					// }, 3000);
+				// });
 			}
 		},
 		fadeFunction: function (tweetElement, tweetElementID) {
