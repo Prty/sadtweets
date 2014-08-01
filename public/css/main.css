@@ -13,6 +13,11 @@ a {
 	text-decoration: none;
 }
 
+video {
+	display: none;
+}
+
+
 .wrapper {
 	width: 800px;
 	margin: 0 auto;

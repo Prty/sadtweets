@@ -1,5 +1,8 @@
 (function () {
 
+
+
+
 	Object.size = function(obj) {
     var size = 0, key;
 	for (key in obj) {
@@ -81,7 +84,12 @@
 		},
 
 		showSadTweets: function (context) {
-			audioElement.play();	//call audio
+			// audioElement.play();	//call audio
+
+			
+			var v = document.getElementsByTagName("video")[0];
+			v.play();
+
 			
 			$('.footer_tweets').fadeIn(2000); // fadein second footer
 			$('.gray').fadeIn(2000);
