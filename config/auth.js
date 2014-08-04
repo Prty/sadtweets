@@ -3,8 +3,8 @@
 // expose our config directly to our application using module.exports
 module.exports = {
 	'twitterAuth' : {
-		'consumerKey' 		: 'PKhzF4Ww6DqbqribSUxQGn5VG',
-		'consumerSecret' 	: 'aQuQHE827XmXmw4gz3NjXTB44LJ4o60gFhkBiB9S9eny2TJH4A',
+		'consumerKey' 		: 'TMthFBQyrtDg6exhL2dP0Yj09',
+		'consumerSecret' 	: 'vhyrhbyTTgws4xOzPY4QKtTlTm6F5Gz13EDViSzqptwpAaN7rZ',
 		'callbackURL' 		: 'http://www.sadtweets.com/auth/twitter/callback'
 	}
 };
