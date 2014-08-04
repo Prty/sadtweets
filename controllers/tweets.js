@@ -1,7 +1,7 @@
 /////////////
 // REQUIRE //
 /////////////
-console.log('tweets1.js!');
+console.log('tweets.js!');
 
 var express = require('express'),
 	router  = express.Router(),
