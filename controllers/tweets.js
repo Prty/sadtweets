@@ -78,6 +78,7 @@ exports.show = function(req, res) {
 						format_created_at: parseTwitterDate(returnedData[i].created_at)
 					};
 					returnedDataObject[tweet.id] = tweet;
+					console.log(returnedData);
 					currentLastTweetID = tweet.id;
 				}	
 			}
@@ -127,6 +128,7 @@ exports.show = function(req, res) {
 							format_created_at: parseTwitterDate(returnedData[i].created_at)
 						};
 						returnedDataObject[tweet.id] = tweet;
+						console.log(returnedData);
 						currentLastTweetID = tweet.id;	
 					}
 				}
@@ -139,7 +141,7 @@ exports.show = function(req, res) {
 			console.log('currentLastTweetID: ' + currentLastTweetID);
 			if (currentLastTweetID === undefined) {
 				res.json(returnedDataObject);
-			} else if (requestCount === 2) {
+			} else if (requestCount === 6) {
 				res.json(returnedDataObject);
 			} else {
 				requestCount++;
