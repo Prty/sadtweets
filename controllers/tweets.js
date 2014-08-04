@@ -1,7 +1,7 @@
 /////////////
 // REQUIRE //
 /////////////
-console.log('tweets1.js!');
+console.log('tweets.js!');
 
 var express = require('express'),
 	router  = express.Router(),
@@ -100,7 +100,7 @@ exports.show = function(req, res) {
 		console.log('nextTweetRequest!');
 
 		T.setAuth(req.user.twitter.token);
-		
+
 		T.get('statuses/user_timeline', { screen_name: req.user.twitter.username, max_id: currentLastTweetID, count: 200 },  function (err, data, response) {
 			returnedData = data;
 			//	
