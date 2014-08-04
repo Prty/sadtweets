@@ -85,7 +85,6 @@
 		showSadTweets: function (context) {
 			// audioElement.play();	//call audio
 
-			
 			var v = document.getElementsByTagName("video")[0];
 			v.play();
 
@@ -212,8 +211,9 @@
 				success: function (data) {
 					console.log(data);
 					var dataLength = Object.size(data);
+					console.log(dataLength);
 
-					if (dataLength) {
+					if (dataLength > 0) {
 						// history.pushState(null, null, twitterhandle);
 
 						////////////////////////////////
