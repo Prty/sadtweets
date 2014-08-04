@@ -13,8 +13,8 @@ var express = require('express'),
 
 var configAuth = require('../config/auth');
 
-var TWITTER_CONSUMER_KEY    = 'PKhzF4Ww6DqbqribSUxQGn5VG';
-var TWITTER_CONSUMER_SECRET = 'aQuQHE827XmXmw4gz3NjXTB44LJ4o60gFhkBiB9S9eny2TJH4A';
+var TWITTER_CONSUMER_KEY    = 'TMthFBQyrtDg6exhL2dP0Yj09';
+var TWITTER_CONSUMER_SECRET = 'vhyrhbyTTgws4xOzPY4QKtTlTm6F5Gz13EDViSzqptwpAaN7rZ';
 
 var T = new Twit({
     consumer_key:         TWITTER_CONSUMER_KEY
