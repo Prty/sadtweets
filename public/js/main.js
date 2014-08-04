@@ -253,7 +253,7 @@
 							
 						// } // end of for loop
 					} else {
-						$('.intro-wrapper').fadeOut(function () {
+						$('.page.user').fadeOut(function () {
 							$('.notweets').fadeIn();
 						});
 					}	

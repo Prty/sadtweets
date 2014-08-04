@@ -139,7 +139,7 @@ exports.show = function(req, res) {
 			console.log('currentLastTweetID: ' + currentLastTweetID);
 			if (currentLastTweetID === undefined) {
 				res.json(returnedDataObject);
-			} else if (requestCount === 6) {
+			} else if (requestCount === 8) {
 				res.json(returnedDataObject);
 			} else {
 				requestCount++;
