@@ -5,6 +5,6 @@ module.exports = {
 	'twitterAuth' : {
 		'consumerKey' 		: 'TMthFBQyrtDg6exhL2dP0Yj09',
 		'consumerSecret' 	: 'vhyrhbyTTgws4xOzPY4QKtTlTm6F5Gz13EDViSzqptwpAaN7rZ',
-		'callbackURL' 		: 'http://localhost:3000/auth/twitter/callback'
+		'callbackURL' 		: 'http://www.sadtweets.com/auth/twitter/callback'
 	}
 };
