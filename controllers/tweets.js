@@ -131,7 +131,7 @@ exports.show = function(req, res) {
 							format_created_at: parseTwitterDate(returnedData[i].created_at)
 						};
 						returnedDataObject[tweet.id] = tweet;
-						console.log(returnedData);
+						// console.log(returnedData);
 						currentLastTweetID = tweet.id;	
 					}
 				}
