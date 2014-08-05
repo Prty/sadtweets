@@ -8,10 +8,11 @@ var userSchema = mongoose.Schema({
     twitter          : {
         id           : String,
         token        : String,
+        secretToken  : String,
         displayName  : String,
         username     : String
     }
-});
+}, { strict: false });
 
 // checking if password is valid using bcrypt
 userSchema.methods.validPassword = function(password) {

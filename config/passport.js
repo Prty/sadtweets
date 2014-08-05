@@ -45,13 +45,12 @@ module.exports = function(passport) {
 
     },
     function(token, tokenSecret, profile, done) {
-
         // make the code asynchronous
 	 	// User.findOne won't fire until we have all our data back from Twitter
         process.nextTick(function() {
 
             User.findOne({ 'twitter.id' : profile.id }, function(err, user) {
-    
+                console.log('updated');
                 // if there is an error, stop everything and return that
                 // ie an error connecting to the database
                 if (err)
@@ -59,7 +58,17 @@ module.exports = function(passport) {
     
                 // if the user is found then log them in
                 if (user) {
-                    return done(null, user); // user found, return that user
+                    //Add the secret token if it's not there
+                    if(user.twitter.secretToken)
+                        return done(null, user);
+
+                    console.log('set the token');
+                    user.set('twitter.secretToken', tokenSecret);
+                    user.save(function(err) {
+                        if (err)
+                            throw err;
+                        return done(null, newUser);
+                    });
                 } else {
                     // if there is no user, create them
                     var newUser                 = new User();
@@ -69,6 +78,7 @@ module.exports = function(passport) {
                     newUser.twitter.token       = token;
                     newUser.twitter.username    = profile.username;
                     newUser.twitter.displayName = profile.displayName;
+                    newUser.twitter.secretToken = tokenSecret;
     
                     // save our user into the database
                     newUser.save(function(err) {
