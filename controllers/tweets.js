@@ -19,13 +19,6 @@ var configAuth = require('../config/auth');
 
 exports.show = function(req, res) {
 	console.log('req.user.twitter.username: ' + req.user.twitter.username)
-<<<<<<< HEAD
-	console.log('eq.user.twitter.token: ' + req.user.twitter.token);
-
-
-	T.setAuth(req.user.twitter.token);
-
-=======
 	
 	var T = new Twit({
 	    consumer_key:         configAuth.twitterAuth.consumerKey
@@ -33,7 +26,6 @@ exports.show = function(req, res) {
 	  , access_token:         req.user.twitter.token
 	  , access_token_secret:  req.user.twitter.secretToken
 	});
->>>>>>> bertfix
 
 	var returnedData,
 		returnedDataObject = {},
