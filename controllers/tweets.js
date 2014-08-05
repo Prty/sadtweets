@@ -13,33 +13,28 @@ var express = require('express'),
 
 var configAuth = require('../config/auth');
 
-var TWITTER_CONSUMER_KEY    = 'TMthFBQyrtDg6exhL2dP0Yj09';
-var TWITTER_CONSUMER_SECRET = 'vhyrhbyTTgws4xOzPY4QKtTlTm6F5Gz13EDViSzqptwpAaN7rZ';
-
-var T = new Twit({
-    consumer_key:         TWITTER_CONSUMER_KEY
-  , consumer_secret:      TWITTER_CONSUMER_SECRET
-  , access_token:         '899268949-te88ah5lgWDQNZcCFSL53WqZOYshMmFSRO2DTznA'
-  , access_token_secret:  'PKyIEecr8mLOOIVZ2mQfh3lw1kr1EWfTOA5HTpOWttzxw'
-});
-
-
 ///////////////////////
 // TWEETS CONTROLLER //
 ///////////////////////
 
-
-
 exports.show = function(req, res) {
 	console.log('req.user.twitter.username: ' + req.user.twitter.username)
+<<<<<<< HEAD
 	console.log('eq.user.twitter.token: ' + req.user.twitter.token);
 
 
 	T.setAuth(req.user.twitter.token);
 
+=======
+	
+	var T = new Twit({
+	    consumer_key:         configAuth.twitterAuth.consumerKey
+	  , consumer_secret:      configAuth.twitterAuth.consumerSecret
+	  , access_token:         req.user.twitter.token
+	  , access_token_secret:  req.user.twitter.secretToken
+	});
+>>>>>>> bertfix
 
-	// console.log(req.params.username);
-	console.log('First Twitter Request!');
 	var returnedData,
 		returnedDataObject = {},
 		currentLastTweetID,
@@ -49,8 +44,7 @@ exports.show = function(req, res) {
 	T.get('statuses/user_timeline', { screen_name: req.user.twitter.username, count: 200 },  function (err, data, response) {
 		returnedData = data;
 
-		// console.log(returnedData);
-		console.log(err);
+		if(err) console.log(err);
 
 		//	
 		//	loop through returned data and create object to push to array
