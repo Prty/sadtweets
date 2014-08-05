@@ -127,7 +127,7 @@ input:focus, textarea:focus {
 
 
 .footer {
-	width: 385px;
+	width: 405px;
 	height: 25px;
 	position: absolute;
 	bottom: 6px;
@@ -140,7 +140,7 @@ input:focus, textarea:focus {
 
 
 .sharebuttons {
-	width: 168px;
+	width: 172px;
 	height: 25px;
 }
 
@@ -160,12 +160,20 @@ input:focus, textarea:focus {
 	position: relative;
 	bottom: 23px;
 	float: right;
+	/*background-color: red;*/
+	/*letter-spacing: 0.0050em;*/
 }
 
 .credits a {
 	color: #BDBDBD;
 	text-decoration: none;
 }
+
+.credits a:hover {
+	color: #BDBDBD;
+	border-bottom: 1px solid;
+}
+
 
 
 /* 			*/
