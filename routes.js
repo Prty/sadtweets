@@ -36,6 +36,4 @@ function isLoggedIn(req, res, next) {
 		console.log('isNotAuthenticated');
 		res.redirect('/');
 	}
-		
-	
 }
