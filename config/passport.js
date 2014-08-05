@@ -29,10 +29,6 @@ module.exports = function(passport) {
             done(err, user);
         });
     });
-    
-    // code for login (use('local-login', new LocalStategy))
-    // code for signup (use('local-signup', new LocalStategy))
-    // code for facebook (use('facebook', new FacebookStrategy))
 
     // =========================================================================
     // TWITTER =================================================================
@@ -59,6 +55,8 @@ module.exports = function(passport) {
     
                 // if the user is found then log them in
                 if (user) {
+                    console.log('below is the returned user');
+                    console.log(user);
                     return done(null, user); // user found, return that user
                 } else {
                     // if there is no user, create them

@@ -32,7 +32,8 @@ var T = new Twit({
 
 exports.show = function(req, res) {
 	console.log('req.user.twitter.username: ' + req.user.twitter.username)
-	console.log(req.params.user);
+	console.log('eq.user.twitter.token: ' + req.user.twitter.token);
+
 
 	T.setAuth(req.user.twitter.token);
 
