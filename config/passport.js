@@ -58,16 +58,15 @@ module.exports = function(passport) {
     
                 // if the user is found then log them in
                 if (user) {
-                    //Add the secret token if it's not there
                     if(user.twitter.secretToken)
                         return done(null, user);
-
-                    console.log('set the token');
+                    
+                    //Add the secret token if it's not there
                     user.set('twitter.secretToken', tokenSecret);
                     user.save(function(err) {
                         if (err)
                             throw err;
-                        return done(null, newUser);
+                        return done(null, user);
                     });
                 } else {
                     // if there is no user, create them
