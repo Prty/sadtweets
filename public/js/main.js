@@ -36,7 +36,7 @@
 	var methods = {
 		init: function () {
 			console.log('Sad Tweets js init!');
-			twitterhandle = $('.ejs-context').html();
+			// twitterhandle = $('.ejs-context').html();
 			methods.showIntroSadTweets();
 
 			var source = $('#tweets-template').html();
@@ -45,29 +45,33 @@
 			var source = $('#tweets-share-template').html();
 			tweetsShareTemplate = Handlebars.compile( source );
 
-			if (parsedURL.length > 0) {
-				methods.getSadTweets('url', twitterhandle);	
-			}
+			// if (parsedURL.length > 0) {
+			// 	methods.getSadTweets('url', twitterhandle);	
+			// }
 
 			// Init getSadTweets input form event handler
 			$('.get-sadtweets-button').on('click', function (e) {
 				e.preventDefault();
 				console.log('get-sadtweets-button!!');
 				window.location.href = AUTHpath + "auth/twitter";
+			});
 
+			//Init getSadtweets input form event hadnler
+			$('.get-sadtweets-form-input').on('click', function (e) {
+				e.preventDefault();
 
 				//////////////////////////
 				//	TWITTER FORM INPUT  //
 				//////////////////////////
 
 
-				// if ($('.twitter-form-input').val().length -1 > 0) {
-				// 	$(this).fadeOut(function () {
-				// 		$('.submit-loading-icon').fadeIn();
-				// 	});
+				if ($('.twitter-form-input').val().length -1 > 0) {
+					$(this).fadeOut(function () {
+						$('.submit-loading-icon').fadeIn();
+					});
 
-				// 	// methods.getSadTweets('input');
-				// }
+					methods.getSadTweets('input');
+				}
 			});
 		},
 
@@ -273,6 +277,7 @@
 				var raw_twitterhandle = $('.twitter-form-input').val();
 				var twitterhandle = raw_twitterhandle.substr(1);
 				params.url = ENVpath + twitterhandle
+				console.log(params.url);
 				
 				var html = tweetsShareTemplate(parsedURL);
 				tweetShareContainer = $('.tweets-share-container');

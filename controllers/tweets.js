@@ -18,6 +18,7 @@ var configAuth = require('../config/auth');
 ///////////////////////
 
 exports.show = function(req, res) {
+	console.log(req.params);
 	console.log('req.user.twitter.username: ' + req.user.twitter.username)
 	
 	var T = new Twit({
@@ -33,7 +34,7 @@ exports.show = function(req, res) {
 		tweet = {},
 		requestCount = 0;
 
-	T.get('statuses/user_timeline', { screen_name: req.user.twitter.username, count: 200 },  function (err, data, response) {
+	T.get('statuses/user_timeline', { screen_name: req.params.username, count: 200 },  function (err, data, response) {
 		returnedData = data;
 
 		if(err) console.log(err);
@@ -88,7 +89,7 @@ exports.show = function(req, res) {
 
 		T.setAuth(req.user.twitter.token);
 
-		T.get('statuses/user_timeline', { screen_name: req.user.twitter.username, max_id: currentLastTweetID, count: 200 },  function (err, data, response) {
+		T.get('statuses/user_timeline', { screen_name: req.params.username, max_id: currentLastTweetID, count: 200 },  function (err, data, response) {
 			returnedData = data;
 			//	
 			//	loop through returned data and create object to push to array
